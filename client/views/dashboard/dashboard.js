@@ -20,6 +20,19 @@ Template.dashboard.destroyed = function(){
 
 Template.dashboard.helpers({
 
+  tasks_to_do:function(){
+    return TasksCollection.find({status:"TO DO"});
+  },
+
+  tasks_in_progress:function(){
+    return TasksCollection.find({status:"IN PROGRESS"});
+
+  },
+  tasks_done:function(){
+    return TasksCollection.find({status:"DONE"});
+
+  }
+
 });
 
 Template.dashboard.events({

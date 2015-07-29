@@ -1,0 +1,13 @@
+<head>
+</head>
+<template name='index'>
+  <body>
+    {{> loginTemplate}}
+  </body>
+</template>
+<template name="loginTemplate">
+  {{> loginButtons}}
+      {{#if currentUser}}
+        {{>login }}
+      {{/if}}
+</template>

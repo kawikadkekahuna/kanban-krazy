@@ -23,11 +23,6 @@ Template.dashboard.destroyed = function(){
 	console.log('destroyed');
 };
 
-Template.dashboard.onRendered = function(){
-  console.log('dashboard rendered');
-}
-
-
 Template.dashboard.helpers({
 
   tasks_to_do:function(){
@@ -40,8 +35,13 @@ Template.dashboard.helpers({
   },
   tasks_done:function(){
     return TasksCollection.find({status:"DONE"});
-
   }
+  // },
+
+  // task_id: function(task) {
+
+  //   return TasksCollection.find({_id: this._id});
+  // }
 
 });
 
@@ -50,7 +50,7 @@ Template.dashboard.events({
   //DETAILS
   'click .taskTitle': function(event, template) {
 
-    $('.details_div').toggle();
+    $(document).foundation('dropdown', 'reflow');
   },
 
   // CREATE
@@ -138,13 +138,13 @@ Template.dashboard.events({
 
     event.preventDefault();
     var newTitle = template.find('.title_input').value;
-    var newDescription = template.find('.description_input').value; 
+    var newDescription = template.find('.description_input').value;
     var newStatus = DEFAULT_STATUS;
 
     console.log('newTitle',newTitle);
     console.log('newDescription',newDescription);
     $('input:radio:checked').each(function() {
-      
+
     });
 
 

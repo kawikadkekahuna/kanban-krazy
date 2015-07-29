@@ -17,6 +17,7 @@
 }
 
 .dashboardWrapper{
+  max-height: 400px;
 	display:inline-flex;
   overflow-y: scroll;
 }
@@ -29,6 +30,7 @@
 .todoWrapper{
 	background-color:#CC0000;
   margin: 2px;
+  height: 600px;
 }
 
 .todoHeader{
@@ -43,6 +45,7 @@
 .inProgressWrapper{
 	background-color:#ffcc33;
   margin: 2px;
+  height: 600px;
 }
 
 .taskInformation{
@@ -57,6 +60,7 @@
 .completeWrapper{
 	background-color:#009933;
   margin: 2px;
+  height: 600px;
 }
 
 .completeHeader{

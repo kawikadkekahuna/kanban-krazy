@@ -30,59 +30,72 @@
   	  </div>
   	</div>
     <hr>
-	  <div class='dashboardWrapper row'>
+    <div class="row">
+  	  <div class='dashboardWrapper large-12 columns'>
+  	  	<div class='todoWrapper large-4 columns'>
+  	  		<div class='taskContainer'>
+  		  		<div class='todoHeader'>To Do</div>
+  		  		<div class='todoBody'>
+  		  			{{#each tasks_to_do}}
+  		  				{{> taskTemplate}}
+  		  			{{/each}}
+  		  		</div>
+  	  		</div>
+  	  	</div>
+  	  	<div class='inProgressWrapper large-4 columns'>
+  	 			<div class='taskContainer'>
+  		  		<div class='inProgressHeader'>In Progress</div>
+  		  		<div class='inProgressBody'>
+  		  			{{#each tasks_in_progress}}
+  		  				{{> taskTemplate}}
+  		  			{{/each}}
+  		  		</div>
+  	  		</div>
+  	  	</div>
 
-	  	<div class='todoWrapper large-4 columns'>
-	  		<div class='taskContainer'>
-		  		<div class='todoHeader'>To Do</div>
-		  		<div class='todoBody'>
-		  			{{#each tasks_to_do}}
-		  				{{> taskTemplate}}
-		  			{{/each}}
-		  		</div>
-	  		</div>
-	  	</div>
-
-	  	<div class='inProgressWrapper large-4 columns'>
-	 			<div class='taskContainer'>
-		  		<div class='inProgressHeader'>In Progress</div>
-		  		<div class='inProgressBody'>
-		  			{{#each tasks_in_progress}}
-		  				{{> taskTemplate}}
-		  			{{/each}}
-		  		</div>
-	  		</div>
-	  	</div>
-
-	  	<div class='completeWrapper large-4 columns'>
-	  		<div class='taskContainer'>
-		  		<div class='completeHeader'>Complete</div>
-		  		<div class='completeBody'>
-		  			{{#each tasks_done}}
-		  				{{> taskTemplate}}
-		  			{{/each}}
-		  		</div>
-		  	</div>
-	  	</div>
-
-	  </div>
-
+  	  	<div class='completeWrapper large-4 columns'>
+  	  		<div class='taskContainer'>
+  		  		<div class='completeHeader'>Complete</div>
+  		  		<div class='completeBody'>
+  		  			{{#each tasks_done}}
+  		  				{{> taskTemplate}}
+  		  			{{/each}}
+  		  		</div>
+  		  	</div>
+  	  	</div>
+      </div>
+    </div>
   </div>
 </template>
-
 
 <template name='taskTemplate'>
 	<div class='task'>
 		<div class='editTaskControls row'>
-			<div class="large-3 columns">
+			<div class="large-1 columns">
 				<div class='left_button'></div>
 			</div>
-			<div class='taskTitle large-3 columns'> {{title}} </div>
-			<div class='addOrDropTask large-3 columns'>
+			<div class='taskTitle large-10 columns'> {{title}} </div>
+        <div class='details_div'>
+          <span>{{description}}</span>
+        </div>
+      <!-- <ul class="accordion create_button taskTitle large-10 columns" data-accordion>
+        {{title}}
+        <li class="accordion-navigation">
+          <a href="#panel1a">Accordion 1</a>
+          <div id="panel1a" class="content">
+            <form>
+              <input type='text'>
+              <input type='text'>
+              <input type='text'>
+            </form>
+          </div>
+        </li>
+      </ul> -->
+			<!-- <div class='addOrDropTask large-5 columns'>
 				<div class='editTask'>Edit</div>
-				<div class='deleteTask'>Delete</div>
-			</div>
-			<div class='large-3 columns'>
+				<div class='deleteTask'>Delete</div> -->
+			<!-- </div> -->
+			<div class='large-1 columns'>
 				<div class='right_button'></div>
 			</div>
 		</div>

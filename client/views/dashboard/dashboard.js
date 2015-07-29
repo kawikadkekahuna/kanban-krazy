@@ -96,6 +96,7 @@ Template.dashboard.events({
   'click .left_button': function(event, template) {
 
     event.preventDefault();
+    console.log('this.status',this.status)
 
     if(this.status === IN_PROGRESS_STATUS) {
 
@@ -111,6 +112,7 @@ Template.dashboard.events({
   'click .right_button': function(event, template) {
 
     event.preventDefault();
+    console.log('this.status',this.status)
 
     if(this.status === "TO_DO_STATUS") {
 

@@ -50,14 +50,14 @@
 	font-size:50px;
 }
 
-.moveLeft{
+.left_button{
 	background-image:url('http://www.isp.msu.edu/isp_common/images/arrow-small-left.png');
 	background-repeat:no-repeat;
 	width:15px;
 	height:15px;
 	background-color:transparent;
 }
-.moveRight{
+.right_button{
 
 	background-image:url('http://www.isp.msu.edu/isp_common/images/arrow-small-right.png');
 	background-repeat:no-repeat;

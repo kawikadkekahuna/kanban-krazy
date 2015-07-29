@@ -1,5 +1,99 @@
 <template name='dashboard'>
-  {{> loginButtons}}
-  <div> you are looking at the dashboard page</div>
-  dashboard.html
+<div class='wrapper'>
+  <div class='dashboardLogin' > {{> loginButtons}}</div>
+  <div class='headerWrapper'>
+	  <div class='header'>
+	  	<span class='title'>Kanban Todo List</span>
+	  	<span class='addTaskWrapper'>
+	  		<span class='addTaskButton'>+</span>
+			</span>
+	  </div>
+	</div>
+
+	  <div class='dashboardWrapper'>
+
+	  	<div class='todoWrapper'>
+	  		<div class='taskContainer'>
+		  		<div class='todoHeader'>To Do</div>
+		  		<div class='todoBody'>
+		  			<div class='task'>
+						<div class='editTaskControls'>
+							<span>
+								<div class='moveLeft'></div>
+							</span>
+							<span class='taskTitle'> Title </span>
+							<span class='addOrDropTask'>
+								<span class='editTask'>Edit</span>
+								<span class='deleteTask'>Delete</span>
+							</span>
+							<span>
+								<div class='moveRight'></div>
+							</span>
+						</div>
+						<div class='taskInformation'>
+							<div class='taskDescription'> Description </div>
+							<div class='taskComments'> Comments </div>
+						</div>
+		  			</div>
+		  		</div>
+	  		</div>
+	  	</div>
+
+	  	<div class='inProgressWrapper'>
+	 			<div class='taskContainer'>
+		  		<div class='inProgressHeader'>In Progress</div>
+		  		<div class='inProgressBody'>
+		  			<div class='task'>
+						<div class='editTaskControls'>
+							<span>
+								<div class='moveLeft'></div>
+							</span>
+							<span class='taskTitle'> Title </span>
+							<span class='addOrDropTask'>
+								<span class='editTask'>Edit</span>
+								<span class='deleteTask'>Delete</span>
+							</span>
+							<span>
+								<div class='moveRight'></div>
+							</span>
+						</div>
+						<div class='taskInformation'>
+							<div class='taskDescription'> Description </div>
+							<div class='taskComments'> Comments </div>
+						</div>
+		  			</div>
+		  		</div>
+	  		</div>
+	  	</div>
+
+	  	<div class='completeWrapper'>
+	  		<div class='taskContainer'>
+		  		<div class='completeHeader'>Complete</div>
+		  		<div class='completeBody'>
+		  			<div class='task'>
+						<div class='editTaskControls'>
+							<span>
+								<div class='moveLeft'></div>
+							</span>
+							<span class='taskTitle'> Title </span>
+							<span class='addOrDropTask'>
+								<span class='editTask'>Edit</span>
+								<span class='deleteTask'>Delete</span>
+							</span>
+							<span>
+								<div class='moveRight'></div>
+							</span>
+						</div>
+						<div class='taskInformation'>
+							<div class='taskDescription'> Description </div>
+							<div class='taskComments'> Comments </div>
+						</div>
+		  			</div>
+		  		</div>
+		  	</div>
+	  	</div>
+
+	  </div>
+
+</div>
 </template>

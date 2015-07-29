@@ -1,7 +1,74 @@
-.taskInformation{
-	display: hidden;
+.wrapper{
+	text-align: center
+}
+
+.header{
+	background-color:red;
+}
+
+.title{
+	font-size:50px;
+}
+
+.addTaskButton{
+	text-align:right;
 }
 
 .dashboardWrapper{
 	display:inline-flex;
+}
+
+.todoWrapper{
+	background-color:yellow;
+}
+
+.todoHeader{
+	font-size:50px;
+}
+
+.inProgressWrapper{
+	background-color:orange;
+}
+
+.taskInformation{
+	visibility:hidden;
+}
+
+.inProgressHeader{
+	font-size:50px;
+}
+
+.completeWrapper{
+	background-color:pink;
+}
+
+.completeHeader{
+	font-size:50px;
+}
+
+.moveLeft{
+	background-image:url('http://www.isp.msu.edu/isp_common/images/arrow-small-left.png');
+	background-repeat:no-repeat;
+	width:15px;
+	height:15px;
+	background-color:transparent;
+}
+.moveRight{
+
+	background-image:url('http://www.isp.msu.edu/isp_common/images/arrow-small-right.png');
+	background-repeat:no-repeat;
+	width:15px;
+	height:15px;
+	background-color:transparent;
+
+}
+
+.editTaskControls{
+	display:flex;
+	align-items:center;
+}
+
+.taskContainer{
+	width:300px;
+	height:800px;
 }

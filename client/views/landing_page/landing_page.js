@@ -5,7 +5,6 @@ Template.login.created = function() {
 		Router.go('/dashboard');
 
 	});
-
 };
 
 Template.login.update = function() {
@@ -18,7 +17,6 @@ Template.login.destroyed = function() {
 
 
 Template.login.helpers({
-
 
 
 });

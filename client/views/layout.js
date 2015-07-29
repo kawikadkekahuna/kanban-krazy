@@ -1,6 +1,5 @@
 Template.layout.created = function(){
   // console.log('register template');
-
 };
 
 Template.layout.update = function(){

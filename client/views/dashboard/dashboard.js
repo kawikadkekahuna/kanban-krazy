@@ -6,7 +6,8 @@ var IN_PROGRESS_STATUS = "IN PROGRESS";
 var DONE_STATUS = "DONE";
 
 Template.dashboard.created = function(){
-	console.log('dashboard template')
+  console.log($(document).foundation('accordion', 'reflow'));
+  console.log('reinstated flow');
 };
 
 Template.dashboard.update = function(){
@@ -40,11 +41,11 @@ Template.dashboard.events({
   // CREATE
   'click .create_button': function(event, template) {
 
-    console.log('template',template);
+    $(document).foundation('accordion', 'reflow');
 
     // console.log(event);
 
-    // var newTitle = template.find('.title_input').value;
+    // var newTitl]e = template.find('.title_input').value;
     // var newDescription = template.find('.description_input').value;
     // var newStatus = DEFAULT_STATUS;
 

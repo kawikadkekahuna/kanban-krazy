@@ -1,25 +1,28 @@
 <template name='dashboard'>
   <div class='dashboardLogin' > {{> loginButtons}}</div>
-  <div class='headerWrapper'></div>
+  <div class='headerWrapper'>
 	  <div class='header'>
 	  	<span class='title'>Title</span>
 	  	<span class='addTaskWrapper'>
 	  		<span class='addTaskButton'>+</span>
 			</span>
 	  </div>
+	</div>
+
 	  <div class='dashboardWrapper'>
+
 	  	<div class='todoWrapper'>
 	  		<div class='todoHeader'>To Do</div>
 	  		<div class='todoBody'>
 	  			<div class='task'>
 					<div class='editTaskControls'>
-						<div class='moveLeft'> Move Left </div>
-						<div class='taskTitle'> Title </div>
-						<div class='addOrDropTask'>
-							<div class='editTask'>Edit</div>
-							<div class='deleteTask'>Delete</div>
-						</div>
-						<div class='moveRight'> Move Right </div>
+						<span class='moveLeft'> Move Left </span>
+						<span class='taskTitle'> Title </span>
+						<span class='addOrDropTask'>
+							<span class='editTask'>Edit</span>
+							<span class='deleteTask'>Delete</span>
+						</span>
+						<span class='moveRight'> Move Right </span>
 					</div>
 					<div class='taskInformation'>
 						<div class='taskDescription'> Description </div>
@@ -28,11 +31,48 @@
 	  			</div>
 	  		</div>
 	  	</div>
+
 	  	<div class='inProgressWrapper'>
 	  		<div class='inProgressHeader'>In Progress</div>
+	  		<div class='inProgressBody'>
+	  			<div class='task'>
+					<div class='editTaskControls'>
+						<span class='moveLeft'> Move Left </span>
+						<span class='taskTitle'> Title </span>
+						<span class='addOrDropTask'>
+							<span class='editTask'>Edit</span>
+							<span class='deleteTask'>Delete</span>
+						</span>
+						<span class='moveRight'> Move Right </span>
+					</div>
+					<div class='taskInformation'>
+						<div class='taskDescription'> Description </div>
+						<div class='taskComments'> Comments </div>
+					</div>
+	  			</div>
+	  		</div>
 	  	</div>
+
 	  	<div class='completeWrapper'>
 	  		<div class='completeHeader'>Complete</div>
+	  		<div class='completeBody'>
+	  			<div class='task'>
+					<div class='editTaskControls'>
+						<span class='moveLeft'> Move Left </span>
+						<span class='taskTitle'> Title </span>
+						<span class='addOrDropTask'>
+							<span class='editTask'>Edit</span>
+							<span class='deleteTask'>Delete</span>
+						</span>
+						<span class='moveRight'> Move Right </span>
+					</div>
+					<div class='taskInformation'>
+						<div class='taskDescription'> Description </div>
+						<div class='taskComments'> Comments </div>
+					</div>
+	  			</div>
+	  		</div>
 	  	</div>
+
 	  </div>
 </template>

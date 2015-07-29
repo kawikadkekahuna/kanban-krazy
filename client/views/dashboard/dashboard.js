@@ -98,14 +98,26 @@ Template.dashboard.events({
     event.preventDefault();
     console.log('this.status',this.status)
 
-    if(this.status === IN_PROGRESS_STATUS) {
+    switch(this.status){
 
-      TasksCollection.update(this._id, {status: TO_DO_STATUS});
-
-    } else if(this.status === DONE_STATUS) {
-
-      TasksCollection.update(this._id, {status: IN_PROGRESS_STATUS});
+      case TO_DO_STATUS:
+      break;
+      case IN_PROGRESS_STATUS:
+        TasksCollection.update(this._id,{$set:{status: TO_DO_STATUS}});
+      break;
+      case DONE_STATUS:
+        TasksCollection.update(this._id,{$set:{status: IN_PROGRESS_STATUS}});
+      break
     }
+
+    // if(this.status === IN_PROGRESS_STATUS) {
+
+    //   TasksCollection.update(this._id, {status: TO_DO_STATUS});
+
+    // } else if(this.status === DONE_STATUS) {
+
+    //   TasksCollection.update(this._id, {status: IN_PROGRESS_STATUS});
+    // }
   },
 
   //UPDATE status RIGHT
@@ -113,14 +125,17 @@ Template.dashboard.events({
 
     event.preventDefault();
     console.log('this.status',this.status)
+      switch(this.status){
 
-    if(this.status === "TO_DO_STATUS") {
+      case TO_DO_STATUS:
+        TasksCollection.update(this._id,{$set:{status: IN_PROGRESS_STATUS}});
+      break;
+      case IN_PROGRESS_STATUS:
+        TasksCollection.update(this._id,{$set:{status: DONE_STATUS}});
+      break;
+      case DONE_STATUS:
+      break;
 
-      TasksCollection.update(this._id, {status: IN_PROGRESS_STATUS});
-
-    } else if(this.status === IN_PROGRESS_STATUS) {
-
-      TasksCollection.update(this._id, {status: DONE_STATUS});
     }
 
   },
@@ -134,4 +149,3 @@ Template.dashboard.events({
   }
 
 });
-

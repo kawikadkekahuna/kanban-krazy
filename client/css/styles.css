@@ -120,10 +120,15 @@
 	height:25px;
 }
 
-.addTaskIcon{
+.accordion-navigation{
 	background-image:url('http://png-5.findicons.com/files/icons/2356/bremen/16/plus.png');
+	background-repeat:no-repeat;
+}
+
+.addTaskIcon{
 	width:25px;
 	height:25px;
-	background-size:cover;
-	background-repeat:no-repeat;
+	background:none !important;
+	background-image:url('http://png-5.findicons.com/files/icons/2356/bremen/16/plus.png');
+
 }

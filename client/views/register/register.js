@@ -8,7 +8,7 @@ Template.register.update = function(){
 };
 
 Template.register.destroyed = function(){
-	console.log('destroyed');
+	Router.go('/dashboard');
 };
 
 

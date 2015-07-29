@@ -1,13 +1,5 @@
 'use strict';
 
-// Meteor.publish('users',function(){
-// 	return UsersCollection.find();
-// });
-
-// Meteor.publish('tasks', function() {
-//   return TasksCollection.find();
-// });
-
 Meteor.publish('tasks_to_do', function() {
   return TasksCollection.find({status:"TO DO"});
 });

@@ -40,26 +40,30 @@ Template.dashboard.events({
   // CREATE
   'click .create_button': function(event, template) {
 
-    var newTitle = template.find('.title_input').value;
-    var newDescription = template.find('.description_input').value;
-    var newStatus = DEFAULT_STATUS;
+    console.log('template',template);
 
-    if(title === "" && description === "") {
+    // console.log(event);
 
-      return;
-    }
+    // var newTitle = template.find('.title_input').value;
+    // var newDescription = template.find('.description_input').value;
+    // var newStatus = DEFAULT_STATUS;
 
-    TasksCollection.insert({
+    // if(title === "" && description === "") {
 
-      title: newTitle,
-      description: newDescription,
-      status: newStatus,
-      show: true,
-      created_at: Date.now()
-    });
+    //   return;
+    // }
 
-    template.find('.title_input').value = "";
-    template.find('.description_input').value = "";
+    // TasksCollection.insert({
+
+    //   title: newTitle,
+    //   description: newDescription,
+    //   status: newStatus,
+    //   show: true,
+    //   created_at: Date.now()
+    // });
+
+    // template.find('.title_input').value = "";
+    // template.find('.description_input').value = "";
   },
 
   //UPDATE Title/Description
@@ -96,7 +100,6 @@ Template.dashboard.events({
   'click .left_button': function(event, template) {
 
     event.preventDefault();
-    console.log('this.status',this.status)
 
     switch(this.status){
 
@@ -109,22 +112,12 @@ Template.dashboard.events({
         TasksCollection.update(this._id,{$set:{status: IN_PROGRESS_STATUS}});
       break
     }
-
-    // if(this.status === IN_PROGRESS_STATUS) {
-
-    //   TasksCollection.update(this._id, {status: TO_DO_STATUS});
-
-    // } else if(this.status === DONE_STATUS) {
-
-    //   TasksCollection.update(this._id, {status: IN_PROGRESS_STATUS});
-    // }
   },
 
   //UPDATE status RIGHT
   'click .right_button': function(event, template) {
 
     event.preventDefault();
-    console.log('this.status',this.status)
       switch(this.status){
 
       case TO_DO_STATUS:

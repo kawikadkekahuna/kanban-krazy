@@ -105,3 +105,21 @@
 
   font-size:12px;
 }
+
+.radioStatus{
+	width:200px;
+	margin:auto !important;
+}
+
+.addPhotoWrapper{
+	width:25px;
+	height:25px;
+}
+
+.addTaskIcon{
+	background-image:url('http://png-5.findicons.com/files/icons/2356/bremen/16/plus.png');
+	width:25px;
+	height:25px;
+	background-size:cover;
+	background-repeat:no-repeat;
+}

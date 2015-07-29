@@ -11,12 +11,17 @@
   	  	<div class='addTaskWrapper  large-4 columns'>
 			<ul class="accordion create_button" data-accordion>
 			  <li class="accordion-navigation">
-			    <a href="#panel1a">Accordion 1</a>
+			    <a href="#panel1a" class='addTaskIcon'>+</a>
 			    <div id="panel1a" class="content">
 			      <form>
-			      	<input type='text'>
-			      	<input type='text'>
-			      	<input type='text'>
+			      	<input type='text' value='Task Title' class='row title_input large-12 columns large-centered'>
+			      	<input type='text' value='Task Description' class='large-12 columns large-centered row description_input'>
+			      	<div class='row radioStatusContainer'>
+			      		<input type='radio' name='status' class='row radioStatus radioToDo' sub='radioToDo' checked='checked'> To Do
+			      		<input type='radio' name='status' class='row radioStatus radioInProgress' sub='radioInProgress'> In Progress
+			      		<input type='radio' name='status' class='row radioStatus radioComplete' sub='radioComplete'> Complete
+			      	</div>
+			      	<button type='submit' class='submitButton'> Submit </button>
 			      </form>
 			    </div>
 			  </li>

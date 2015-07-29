@@ -43,28 +43,6 @@ Template.dashboard.events({
 
     $(document).foundation('accordion', 'reflow');
 
-    // console.log(event);
-
-    // var newTitl]e = template.find('.title_input').value;
-    // var newDescription = template.find('.description_input').value;
-    // var newStatus = DEFAULT_STATUS;
-
-    // if(title === "" && description === "") {
-
-    //   return;
-    // }
-
-    // TasksCollection.insert({
-
-    //   title: newTitle,
-    //   description: newDescription,
-    //   status: newStatus,
-    //   show: true,
-    //   created_at: Date.now()
-    // });
-
-    // template.find('.title_input').value = "";
-    // template.find('.description_input').value = "";
   },
 
   //UPDATE Title/Description
@@ -140,6 +118,41 @@ Template.dashboard.events({
     event.preventDefault();
 
     TasksCollection.remove(this._id);
+  },
+
+  'click .submitButton ':function(event,template){
+
+    event.preventDefault();
+    var newTitle = template.find('.title_input').value;
+    var newDescription = template.find('.description_input').value; 
+    var newStatus = DEFAULT_STATUS;
+
+    console.log('newTitle',newTitle);
+    console.log('newDescription',newDescription);
+    $('input:radio:checked').each(function() {
+      
+    });
+
+
+    if(newTitle === "" && newDescription === "") {
+
+      return;
+    }
+
+    TasksCollection.insert({
+
+      createdBy: Meteor.userId(),
+      title: newTitle,
+      description: newDescription,
+      status: newStatus,
+      show: true,
+      created_at: Date.now()
+    });
+
+    console.log(TasksCollection.find().fetch().length);
+
+    template.find('.title_input').value = "";
+    template.find('.description_input').value = "";
   }
 
 });

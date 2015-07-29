@@ -8,7 +8,7 @@ Router.onBeforeAction(function() {
 
 Router.route('/')
 	.get(function() {
-		this.render('index')
+		this.render('layout')
 	});
 
 Router.route('/dashboard')

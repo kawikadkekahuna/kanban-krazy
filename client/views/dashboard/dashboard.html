@@ -1,5 +1,38 @@
 <template name='dashboard'>
-  {{> loginButtons}}
-  <div> you are looking at the dashboard page</div>
-  dashboard.html
+  <div class='dashboardLogin' > {{> loginButtons}}</div>
+  <div class='headerWrapper'></div>
+	  <div class='header'>
+	  	<span class='title'>Title</span>
+	  	<span class='addTaskWrapper'>
+	  		<span class='addTaskButton'>+</span>
+			</span>
+	  </div>
+	  <div class='dashboardWrapper'>
+	  	<div class='todoWrapper'>
+	  		<div class='todoHeader'>To Do</div>
+	  		<div class='todoBody'>
+	  			<div class='task'>
+					<div class='editTaskControls'>
+						<div class='moveLeft'> Move Left </div>
+						<div class='taskTitle'> Title </div>
+						<div class='addOrDropTask'>
+							<div class='editTask'>Edit</div>
+							<div class='deleteTask'>Delete</div>
+						</div>
+						<div class='moveRight'> Move Right </div>
+					</div>
+					<div class='taskInformation'>
+						<div class='taskDescription'> Description </div>
+						<div class='taskComments'> Comments </div>
+					</div>
+	  			</div>
+	  		</div>
+	  	</div>
+	  	<div class='inProgressWrapper'>
+	  		<div class='inProgressHeader'>In Progress</div>
+	  	</div>
+	  	<div class='completeWrapper'>
+	  		<div class='completeHeader'>Complete</div>
+	  	</div>
+	  </div>
 </template>

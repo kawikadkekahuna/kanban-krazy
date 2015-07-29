@@ -1,14 +1,20 @@
+
 <head>
+	<link rel="stylesheet" href="															/css/styles.css">
 </head>
-<template name='index'>
+
+<template name='register'>
   <body>
-    {{> loginTemplate}}
+      {{> loginButtons}}
   </body>
 </template>
-<template name="loginTemplate">
-  {{> loginButtons}}
-      {{#if currentUser}}
-        {{>login }}
-      {{/if}}
+
+<template name='dashboard'>
+<body>
+	<div> you are looking at the dashboard page</div>
+</body>
 </template>
 
+<template name='index'>
+Index page
+</template>

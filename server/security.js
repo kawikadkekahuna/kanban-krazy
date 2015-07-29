@@ -2,11 +2,9 @@
 
 TasksCollection.allow({
   'insert': function (userId,doc) {
-
-    return (userId === Meteor.userId);
+    return (userId === Meteor.user()._id);
   },
   'update': function (userId,doc) {
-
-    return (userId === Meteor.userId);
+    return (userId === Meteor.user()._id);
   }
 });

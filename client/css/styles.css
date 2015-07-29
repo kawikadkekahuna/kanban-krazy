@@ -1,5 +1,6 @@
 .wrapper{
-	text-align: center
+	text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .header{
@@ -7,7 +8,8 @@
 }
 
 .title{
-	font-size:50px;
+	font-size:40px;
+  font-weight: 800;
 }
 
 .create_button{
@@ -16,14 +18,16 @@
 
 .dashboardWrapper{
 	display:inline-flex;
+  overflow-y: scroll;
 }
 
 .todoWrapper{
-	background-color:yellow;
+	background-color:#CC0000;
+  margin: 2px;
 }
 
 .todoHeader{
-	font-size:50px;
+	font-size:30px;
 }
 
 .addOrDropTask{
@@ -31,7 +35,8 @@
 }
 
 .inProgressWrapper{
-	background-color:orange;
+	background-color:#ffcc33;
+  margin: 2px;
 }
 
 .taskInformation{
@@ -39,15 +44,16 @@
 }
 
 .inProgressHeader{
-	font-size:50px;
+	font-size:30px;
 }
 
 .completeWrapper{
-	background-color:pink;
+	background-color:#009933;
+  margin: 2px;
 }
 
 .completeHeader{
-	font-size:50px;
+	font-size:30px;
 }
 
 .left_button{
@@ -73,6 +79,21 @@
 }
 
 .taskContainer{
-	width:300px;
-	height:800px;
+	/*width:300px;*/
+	/*height:800px;*/
 }
+
+/*.todoBody {
+
+  overflow-y: scroll;
+}
+
+.inProgressBody {
+
+  overflow-y: scroll;
+}
+
+.completeBody {
+
+  overflow-y: scroll;
+}*/

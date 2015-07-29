@@ -8,5 +8,8 @@ meteor-platform
 iron:router
 accounts-password
 accounts-ui
+<<<<<<< HEAD
 ewall:foundation
+=======
+>>>>>>> 8b20b36dfba34283344c1450db14fedc21b87739
 foundation

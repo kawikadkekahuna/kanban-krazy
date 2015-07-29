@@ -5,6 +5,8 @@ var TO_DO_STATUS = "TO DO";
 var IN_PROGRESS_STATUS = "IN PROGRESS";
 var DONE_STATUS = "DONE";
 
+var IS_DRAGGING = false;
+
 Template.dashboard.created = function(){
 
   // console.log($(document).foundation('accordion', 'reflow'));
@@ -20,6 +22,10 @@ Template.dashboard.update = function(){
 Template.dashboard.destroyed = function(){
 	console.log('destroyed');
 };
+
+Template.dashboard.onRendered = function(){
+  console.log('dashboard rendered');
+}
 
 
 Template.dashboard.helpers({
@@ -50,7 +56,6 @@ Template.dashboard.events({
   // CREATE
   'click .create_button': function(event, template) {
 
-    $(document).foundation('accordion', 'reflow');
 
   },
 
@@ -162,6 +167,16 @@ Template.dashboard.events({
 
     template.find('.title_input').value = "";
     template.find('.description_input').value = "";
+  },
+
+  'mouseover .task':function(){
+  
+    $('.task').draggable({snap:true});
   }
 
 });
+
+Template.dashboard.rendered = function(){
+    $(document).foundation('accordion', 'reflow');
+
+}

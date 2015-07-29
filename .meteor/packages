@@ -10,3 +10,5 @@ accounts-password
 accounts-ui
 ewall:foundation
 
+dbernhard:jquery-ui-draggable
+mrt:jquery-ui

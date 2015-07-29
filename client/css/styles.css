@@ -26,6 +26,10 @@
 	font-size:50px;
 }
 
+.addOrDropTask{
+	visibility: hidden;
+}
+
 .inProgressWrapper{
 	background-color:orange;
 }

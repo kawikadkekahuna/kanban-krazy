@@ -2,15 +2,15 @@
 
 Meteor.startup(function(){
 
-	if(UsersCollection.find().fetch().length === 0){
+	// if(UsersCollection.find().fetch().length === 0){
 
-		UsersCollection.insert({
-			username:'admin',
-			password:'',
-			show:false,
-			added: Date.now()
-		});
-	}
+	// 	UsersCollection.insert({
+	// 		username:'admin@admin.com',
+	// 		password:'pw',
+	// 		show:false,
+	// 		added: Date.now()
+	// 	});
+	// }
 
   if(TasksCollection.find().fetch().length === 0) {
 

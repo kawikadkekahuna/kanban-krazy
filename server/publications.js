@@ -1,8 +1,8 @@
 'use strict';
 
-Meteor.publish('users',function(){
-	return UsersCollection.find();
-});
+// Meteor.publish('users',function(){
+// 	return UsersCollection.find();
+// });
 
 // Meteor.publish('tasks', function() {
 //   return TasksCollection.find();

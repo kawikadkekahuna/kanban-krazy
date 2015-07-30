@@ -30,14 +30,13 @@ Template.dashboard.onRendered(function() {
   dragula([document.querySelector('.todoBody'), document.querySelector('.inProgressBody'), document.querySelector('.completeBody')], {
       direction: 'vertical',
       revertOnSpill: true,
-      delay:true
+      delay:false
     })
-    .on('drop', function(el) {
+    .on('drop', function(el,container,source) {
 
       var id = Blaze.getData(el)._id;
-      var newStatus = $(el).parent().prop('className')
 
-      switch (newStatus) {
+      switch (container.className.split(' ')[0]) {
         case 'todoBody':
           TasksCollection.update(id, {
             $set: {
@@ -60,8 +59,15 @@ Template.dashboard.onRendered(function() {
           });
           break;
       }
+    })
+    .on('over',function(el,container,source){
+      container = container.className.split(' ')[0];
+      console.log('container',container);
+
+      $('.'+container).fadeTo('slow',0.33);
     });
 });
+
 
 Template.dashboard.helpers({
 
@@ -225,19 +231,17 @@ Template.dashboard.events({
   'click .display_toggle': function(event,template) {
 
     event.preventDefault();
-    console.log('display_toggle clicked');
 
-    if($('.hover_display_container').hasClass('show')) {
+    // if($('.hover_display_container').hasClass('show')) {
 
-      $('.hover_display_container').removeClass('show').addClass('hidden');
-      $('.hover_edit_container').removeClass('hidden').addClass('show');
-    }
+    //   $('.hover_display_container').removeClass('show').addClass('hidden');
+    //   $('.hover_edit_container').removeClass('hidden').addClass('show');
+    // }
   },
 
   'click .edit_toggle': function(event,template) {
 
     event.preventDefault();
-    console.log('edit_toggle clicked');
 
     if($('.hover_display_container').hasClass('hidden')) {
 

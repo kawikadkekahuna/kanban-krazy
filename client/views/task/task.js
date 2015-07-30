@@ -139,5 +139,12 @@ Template.task.events({
     event.preventDefault();
 
     TasksCollection.remove(this._id);
+  },
+  
+  'mouseup .task': function(event, template) {
+    console.log('mouseup');
+      $('.todoBody').fadeTo(200, 1);
+      $('.inProgressBody').fadeTo(200, 1);
+      $('.completeBody').fadeTo(200, 1);    
   }
 });

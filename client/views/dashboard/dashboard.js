@@ -171,7 +171,7 @@ Template.dashboard.events({
 
   'mouseover .task':function(){
   
-    $('.task').draggable({snap:true});
+    $('.task').draggable({snap:'.taskContainer',snapMode: 'both'});
   }
 
 });

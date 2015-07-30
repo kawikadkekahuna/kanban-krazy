@@ -13,7 +13,7 @@ Router.route('/')
 
 Router.route('/dashboard')
 	.get(function() {
-
+		
 		this.render('dashboard');
 
 	});

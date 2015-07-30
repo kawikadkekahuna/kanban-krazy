@@ -8,9 +8,20 @@
   	  <div class='header'>
         <div class='large-4 columns'>. </div>
   	  	<div class='title large-4 columns'>KANBAN</div>
-  	  	<div class='addTaskWrapper large-4 columns'>
-  	  		<span class='create_button'>+</span>
-  			</div>
+  	  	<div class='addTaskWrapper  large-4 columns'>
+			<ul class="accordion create_button" data-accordion>
+			  <li class="accordion-navigation">
+			    <a href="#panel1a">Accordion 1</a>
+			    <div id="panel1a" class="content">
+			      <form>
+			      	<input type='text'>
+			      	<input type='text'>
+			      	<input type='text'>
+			      </form>
+			    </div>
+			  </li>
+			</ul>
+  		</div>
   	  </div>
   	</div>
     <hr>
@@ -77,13 +88,12 @@
 	</div>
 </template>
 
-<template name='taskModal'>
-	<a href="#" data-reveal-id="myModal">Click Me For A Modal</a>
-
-	<div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-	  <h2 id="modalTitle">Awesome. I have it.</h2>
+<!-- <template name='taskModal'>
+	<div id="myModal" class="reveal-modal">
+	  <h2>Awesome. I have it.</h2>
 	  <p class="lead">Your couch.  It is mine.</p>
-	  <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
-	  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+	  <p>Im a cool paragraph that lives inside of an even cooler modal. Wins</p>
+	  <a class="close-reveal-modal">&#215;</a>
 	</div>
 </template>
+ -->

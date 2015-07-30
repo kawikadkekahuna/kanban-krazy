@@ -7,6 +7,10 @@
 	background-color:red;
 }
 
+body{
+	background-image:url('http://subtlepatterns.com/patterns/wood_pattern.png');
+}
+
 .title{
 	font-size:50px;
   font-weight: 800;
@@ -17,9 +21,9 @@
 }
 
 .dashboardWrapper{
-  max-height: 400px;
+  /*max-height: 400px;*/
 	display:inline-flex;
-  overflow-y: scroll;
+  /*overflow-y: scroll;*/
 }
 
 .dashboardLogin {
@@ -100,6 +104,15 @@
 	border:1px solid black;
 }
 
+.taskContainer{
+	overflow:auto;
+	overflow-x:hidden;
+}
+
+.taskBody{
+	height:500px;
+}
+
 .todoBody {
 
   font-size:12px;
@@ -152,9 +165,6 @@
 .hover_display_container.hidden {
   display:none;
 }
-.placeholder{
-	height:25px;
-}
 
 .gu-mirror {
   position: fixed !important;
@@ -180,3 +190,4 @@
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
   filter: alpha(opacity=80);
 }
+

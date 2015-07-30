@@ -28,10 +28,9 @@
     <div class="row">
   	  <div class='dashboardWrapper large-12 columns'>
   	  	<div class='todoWrapper large-4 columns'>
-  	  		<div class='taskContainer'>
-  		  		<div class='todoHeader'>To Do</div>
-  		  		<div class='todoBody'>
-              <div class='placeholder'></div>
+  		  	<div class='todoHeader'>To Do</div>
+          <div class='taskContainer'>
+  		  		<div class='todoBody taskBody'>
   		  			{{#each tasks_to_do}}
   		  				{{> taskTemplate}}
   		  			{{/each}}
@@ -39,10 +38,9 @@
   	  		</div>
   	  	</div>
   	  	<div class='inProgressWrapper large-4 columns'>
-  	 			<div class='taskContainer'>
+  	 			<div class='taskContainer '>
   		  		<div class='inProgressHeader'>In Progress</div>
-  		  		<div class='inProgressBody'>
-              <div class='placeholder'></div>
+  		  		<div class='inProgressBody taskBody'>
               {{#each tasks_in_progress}}
                 {{> taskTemplate}}
               {{/each}}
@@ -50,10 +48,9 @@
   	  		</div>
   	  	</div>
   	  	<div class='completeWrapper large-4 columns'>
-  	  		<div class='taskContainer'>
-  		  		<div class='completeHeader'>Complete</div>
-  		  		<div class='completeBody'>
-              <div class='placeholder'></div>
+  		  	<div class='completeHeader'>Complete</div>
+          <div class='taskContainer'>
+  		  		<div class='completeBody taskBody'>
   		  			{{#each tasks_done}}
   		  				{{> taskTemplate}}
   		  			{{/each}}

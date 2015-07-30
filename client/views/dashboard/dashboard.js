@@ -9,9 +9,6 @@ var IS_DRAGGING = false;
 
 Template.dashboard.created = function() {
 
-  // console.log($(document).foundation('accordion', 'reflow'));
-  // console.log('reinstated flow');
-
   $(".details_div").hide();
 };
 
@@ -37,7 +34,6 @@ Template.dashboard.onRendered(function() {
     .on('drop', function(el) {
 
       var id = Blaze.getData(el)._id;
-      console.log('id', id);
       var newStatus = $(el).parent().prop('className')
 
       switch (newStatus) {
@@ -207,13 +203,6 @@ Template.dashboard.events({
     var newDescription = template.find('.description_input').value;
     var newStatus = DEFAULT_STATUS;
 
-    console.log('newTitle', newTitle);
-    console.log('newDescription', newDescription);
-    $('input:radio:checked').each(function() {
-
-    });
-
-
     if (newTitle === "" && newDescription === "") {
 
       return;
@@ -229,17 +218,9 @@ Template.dashboard.events({
       created_at: Date.now()
     });
 
-    console.log(TasksCollection.find().fetch().length);
-
     template.find('.title_input').value = "";
     template.find('.description_input').value = "";
   },
-
-  'mouseover .task':function(){
-    $('.task').draggable({snap:'.taskContainer',snapMode: 'both'});
-
-  },
-
   'click .display_toggle': function(event,template) {
 
     if($('.hover_display_container').hasClass('show')) {

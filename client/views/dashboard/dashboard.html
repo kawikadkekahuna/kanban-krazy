@@ -68,8 +68,8 @@
 			<div class="large-1 columns">
 				<div class='left_button'></div>
 			</div>
-			<a class='taskTitle large-10 columns' data-dropdown="hover_drop{{_id}}" data-options="is_hover:true; hover_timeout:5000"> {{title}}</a>
-      <div id="hover_drop{{_id}}" class='details_div f-dropdown content' data-dropdown-content>
+			<a class='taskTitle large-10 columns' data-reveal-id="modal{{_id}}"> {{title}}</a>
+      <div id="modal{{_id}}" class='details_div reveal-modal' data-reveal aria-hidden="true" role="dialog">
         <div class="hover_container">
           <div class="hover_display_container show">
             <div class="row">

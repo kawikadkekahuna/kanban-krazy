@@ -48,7 +48,8 @@ Template.dashboard.events({
   //DETAILS
   'click .taskTitle': function(event, template) {
 
-    $(document).foundation('dropdown', 'reflow');
+    // $(document).foundation('dropdown', 'reflow');
+    $(document).foundation('reveal', 'reflow');
   },
 
   // CREATE

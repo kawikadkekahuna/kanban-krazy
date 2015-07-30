@@ -16,12 +16,17 @@ Template.dashboard.created = function(){
 };
 
 Template.dashboard.update = function(){
-	console.log('updated');
+
 };
 
 Template.dashboard.destroyed = function(){
-	console.log('destroyed');
+
 };
+
+Template.dashboard.rendered = function(){
+
+    $(document).foundation('accordion', 'reflow');
+}
 
 Template.dashboard.helpers({
 
@@ -36,7 +41,6 @@ Template.dashboard.helpers({
   tasks_done:function(){
     return TasksCollection.find({status:"DONE"});
   }
-
 });
 
 Template.dashboard.events({
@@ -48,10 +52,10 @@ Template.dashboard.events({
   },
 
   // CREATE
-  'click .create_button': function(event, template) {
+  // 'click .create_button': function(event, template) {
 
 
-  },
+  // },
 
   //UPDATE Title/Description
   'click .update_button': function(event, template) {
@@ -166,11 +170,25 @@ Template.dashboard.events({
   'mouseover .task':function(){
     $('.task').draggable({snap:'.taskContainer',snapMode: 'both'});
 
+  },
+
+  'click .display_toggle': function(event,template) {
+
+    if($('.hover_display_container').hasClass('show')) {
+
+      $('.hover_display_container').removeClass('show').addClass('hidden');
+      $('.hover_edit_container').removeClass('hidden').addClass('show');
+    }
+  },
+
+  'click .edit_toggle': function(event,template) {
+
+    if($('.hover_display_container').hasClass('hidden')) {
+
+      $('.hover_display_container').removeClass('hidden').addClass('show');
+      $('.hover_edit_container').removeClass('show').addClass('hidden');
+    }
+
   }
 
 });
-
-Template.dashboard.rendered = function(){
-    $(document).foundation('accordion', 'reflow');
-
-}

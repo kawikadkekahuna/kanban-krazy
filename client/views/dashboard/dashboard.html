@@ -70,7 +70,39 @@
 			</div>
 			<a class='taskTitle large-10 columns' data-dropdown="hover_drop{{_id}}" data-options="is_hover:true; hover_timeout:5000"> {{title}}</a>
       <div id="hover_drop{{_id}}" class='details_div f-dropdown content' data-dropdown-content>
-        <span>{{description}}</span>
+        <div class="hover_container">
+          <div class="hover_display_container show">
+            <div class="row">
+              {{description}}
+            </div>
+            <div class="row">
+              <a href="#" class="button tiny display_toggle">Edit</a>
+              <a href="#" class="button tiny delete_button">Delete</a>
+            </div>
+          </div>
+          <div class="hover_edit_container hidden">
+            <div class="row">
+              <div class="tiny-3 columns">
+                <label for="title_input">Title:</label>
+              </div>
+              <div class="tiny-9 columns">
+                <input class="title_input" type="text" name="title">
+              </div>
+            </div>
+            <div class="row">
+              <div class="tiny-3 columns">
+                <label for="description_input">Description</label>
+              </div>
+              <div class="tiny-9 columns">
+                <input class="description_input" type="text" name="description">
+              </div>
+            </div>
+            <div class="row">
+              <a href="#" class="button tiny update_button">Submit</a>
+              <a href="#" class="button tiny cancel_button edit_toggle">Cancel</a>
+            </div>
+          </div>
+        </div>
       </div>
       <!-- <ul class="accordion create_button taskTitle large-10 columns" data-accordion>
         {{title}}

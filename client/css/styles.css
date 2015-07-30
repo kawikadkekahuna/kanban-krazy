@@ -135,5 +135,20 @@
 	height:25px;
 	background:none !important;
 	background-image:url('http://png-5.findicons.com/files/icons/2356/bremen/16/plus.png');
+}
 
+.hover_edit_container.show {
+  display:block;
+}
+
+.hover_edit_container.hidden {
+  display:none;
+}
+
+.hover_display_container.show {
+  display:block;
+}
+
+.hover_display_container.hidden {
+  display:none;
 }

@@ -4,8 +4,10 @@ var DEFAULT_STATUS = "TO DO";
 var TO_DO_STATUS = "TO DO";
 var IN_PROGRESS_STATUS = "IN PROGRESS";
 var DONE_STATUS = "DONE";
+var OPACITY_FADE = 0.33;
+var OPACITY_BRIGHTEN = 1;
+var OPACITY_SPEED = 200;
 
-var IS_DRAGGING = false;
 
 Template.dashboard.created = function() {
 
@@ -27,16 +29,27 @@ Template.dashboard.rendered = function(){
 }
 
 Template.dashboard.onRendered(function() {
+
   dragula([document.querySelector('.todoBody'), document.querySelector('.inProgressBody'), document.querySelector('.completeBody')], {
       direction: 'vertical',
       revertOnSpill: true,
-      delay:false
+      delay:100
     })
     .on('drop', function(el,container,source) {
+      console.log('drop');
+      container = container.className.split(' ')[0];
+      source = source.className.split(' ')[0];
+
+      console.log('container',container);
+      console.log('source',source);
+
+      $('.'+container).fadeTo(OPACITY_SPEED,OPACITY_BRIGHTEN);
+
+      $('.'+source).fadeTo(OPACITY_SPEED,OPACITY_BRIGHTEN);      
 
       var id = Blaze.getData(el)._id;
 
-      switch (container.className.split(' ')[0]) {
+      switch (container) {
         case 'todoBody':
           TasksCollection.update(id, {
             $set: {
@@ -60,12 +73,15 @@ Template.dashboard.onRendered(function() {
           break;
       }
     })
-    .on('over',function(el,container,source){
+    .on('drag',function(el,container,source){
+      console.log('drag');
       container = container.className.split(' ')[0];
       console.log('container',container);
 
-      $('.'+container).fadeTo('slow',0.33);
+      $('.'+container).fadeTo(OPACITY_SPEED,OPACITY_FADE);
     });
+
+
 });
 
 

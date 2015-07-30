@@ -36,12 +36,6 @@ Template.dashboard.helpers({
   tasks_done:function(){
     return TasksCollection.find({status:"DONE"});
   }
-  // },
-
-  // task_id: function(task) {
-
-  //   return TasksCollection.find({_id: this._id});
-  // }
 
 });
 
@@ -170,8 +164,8 @@ Template.dashboard.events({
   },
 
   'mouseover .task':function(){
-  
     $('.task').draggable({snap:'.taskContainer',snapMode: 'both'});
+
   }
 
 });

@@ -31,6 +31,7 @@
   	  		<div class='taskContainer'>
   		  		<div class='todoHeader'>To Do</div>
   		  		<div class='todoBody'>
+              <div class='placeholder'></div>
   		  			{{#each tasks_to_do}}
   		  				{{> taskTemplate}}
   		  			{{/each}}
@@ -41,9 +42,10 @@
   	 			<div class='taskContainer'>
   		  		<div class='inProgressHeader'>In Progress</div>
   		  		<div class='inProgressBody'>
-  		  			{{#each tasks_in_progress}}
-  		  				{{> taskTemplate}}
-  		  			{{/each}}
+              <div class='placeholder'></div>
+              {{#each tasks_in_progress}}
+                {{> taskTemplate}}
+              {{/each}}
   		  		</div>
   	  		</div>
   	  	</div>
@@ -51,6 +53,7 @@
   	  		<div class='taskContainer'>
   		  		<div class='completeHeader'>Complete</div>
   		  		<div class='completeBody'>
+              <div class='placeholder'></div>
   		  			{{#each tasks_done}}
   		  				{{> taskTemplate}}
   		  			{{/each}}

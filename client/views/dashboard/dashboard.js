@@ -7,7 +7,7 @@ var DONE_STATUS = "DONE";
 
 var IS_DRAGGING = false;
 
-Template.dashboard.created = function(){
+Template.dashboard.created = function() {
 
   // console.log($(document).foundation('accordion', 'reflow'));
   // console.log('reinstated flow');
@@ -15,26 +15,85 @@ Template.dashboard.created = function(){
   $(".details_div").hide();
 };
 
-Template.dashboard.update = function(){
-	console.log('updated');
+Template.dashboard.update = function() {
+  console.log('updated');
 };
 
-Template.dashboard.destroyed = function(){
-	console.log('destroyed');
+Template.dashboard.destroyed = function() {
+  console.log('destroyed');
 };
 
+<<<<<<< HEAD
+=======
+
+Template.dashboard.rendered = function() {
+  $(document).foundation('accordion', 'reflow');
+
+}
+
+Template.dashboard.onRendered(function() {
+  dragula([document.querySelector('.todoBody'), document.querySelector('.inProgressBody'), document.querySelector('.completeBody')], {
+      direction: 'vertical',
+      revertOnSpill: true,
+      delay:true
+    })
+    .on('drop', function(el) {
+
+      var id = Blaze.getData(el)._id;
+      console.log('id', id);
+      var newStatus = $(el).parent().prop('className')
+
+      switch (newStatus) {
+        case 'todoBody':
+          TasksCollection.update(id, {
+            $set: {
+              status: TO_DO_STATUS
+            }
+          });
+          break;
+        case 'inProgressBody':
+          TasksCollection.update(id, {
+            $set: {
+              status: IN_PROGRESS_STATUS
+            }
+          });
+          break;
+        case 'completeBody':
+          TasksCollection.update(id, {
+            $set: {
+              status: DONE_STATUS
+            }
+          });
+          break;
+      }
+    });
+});
+
+>>>>>>> dragging_tasks
 Template.dashboard.helpers({
 
-  tasks_to_do:function(){
-    return TasksCollection.find({status:"TO DO"});
+  tasks_to_do: function() {
+    return TasksCollection.find({
+      status: "TO DO"
+    });
   },
 
-  tasks_in_progress:function(){
-    return TasksCollection.find({status:"IN PROGRESS"});
+  tasks_in_progress: function() {
+    return TasksCollection.find({
+      status: "IN PROGRESS"
+    });
 
   },
+<<<<<<< HEAD
   tasks_done:function(){
     return TasksCollection.find({status:"DONE"});
+=======
+  tasks_done: function() {
+    return TasksCollection.find({
+      status: "DONE"
+    });
+
+>>>>>>> dragging_tasks
   }
 
 });
@@ -61,22 +120,29 @@ Template.dashboard.events({
     var newTitle = template.find('.title_input').value;
     var newDescription = template.find('.description_input').value;
 
-    if(newTitle === "" && newDescription === "") {
+    if (newTitle === "" && newDescription === "") {
 
       return;
     }
 
-    if(newTitle === "") {
+    if (newTitle === "") {
 
-      TasksCollection.update(this._id,{ description: newDescription});
+      TasksCollection.update(this._id, {
+        description: newDescription
+      });
 
-    } else if(newDescription === "") {
+    } else if (newDescription === "") {
 
-      TasksCollection.update(this._id,{ title: newTitle});
+      TasksCollection.update(this._id, {
+        title: newTitle
+      });
 
     } else {
 
-      TasksCollection.update(this._id,{title: newTitle,description:newDescription});
+      TasksCollection.update(this._id, {
+        title: newTitle,
+        description: newDescription
+      });
     }
 
     template.find('.title_input').value = "";
@@ -88,16 +154,24 @@ Template.dashboard.events({
 
     event.preventDefault();
 
-    switch(this.status){
+    switch (this.status) {
 
       case TO_DO_STATUS:
-      break;
+        break;
       case IN_PROGRESS_STATUS:
-        TasksCollection.update(this._id,{$set:{status: TO_DO_STATUS}});
-      break;
+        TasksCollection.update(this._id, {
+          $set: {
+            status: TO_DO_STATUS
+          }
+        });
+        break;
       case DONE_STATUS:
-        TasksCollection.update(this._id,{$set:{status: IN_PROGRESS_STATUS}});
-      break
+        TasksCollection.update(this._id, {
+          $set: {
+            status: IN_PROGRESS_STATUS
+          }
+        });
+        break
     }
   },
 
@@ -105,16 +179,24 @@ Template.dashboard.events({
   'click .right_button': function(event, template) {
 
     event.preventDefault();
-      switch(this.status){
+    switch (this.status) {
 
       case TO_DO_STATUS:
-        TasksCollection.update(this._id,{$set:{status: IN_PROGRESS_STATUS}});
-      break;
+        TasksCollection.update(this._id, {
+          $set: {
+            status: IN_PROGRESS_STATUS
+          }
+        });
+        break;
       case IN_PROGRESS_STATUS:
-        TasksCollection.update(this._id,{$set:{status: DONE_STATUS}});
-      break;
+        TasksCollection.update(this._id, {
+          $set: {
+            status: DONE_STATUS
+          }
+        });
+        break;
       case DONE_STATUS:
-      break;
+        break;
 
     }
 
@@ -128,21 +210,21 @@ Template.dashboard.events({
     TasksCollection.remove(this._id);
   },
 
-  'click .submitButton ':function(event,template){
+  'click .submitButton ': function(event, template) {
 
     event.preventDefault();
     var newTitle = template.find('.title_input').value;
     var newDescription = template.find('.description_input').value;
     var newStatus = DEFAULT_STATUS;
 
-    console.log('newTitle',newTitle);
-    console.log('newDescription',newDescription);
+    console.log('newTitle', newTitle);
+    console.log('newDescription', newDescription);
     $('input:radio:checked').each(function() {
 
     });
 
 
-    if(newTitle === "" && newDescription === "") {
+    if (newTitle === "" && newDescription === "") {
 
       return;
     }
@@ -161,16 +243,14 @@ Template.dashboard.events({
 
     template.find('.title_input').value = "";
     template.find('.description_input').value = "";
+<<<<<<< HEAD
   },
 
   'mouseover .task':function(){
     $('.task').draggable({snap:'.taskContainer',snapMode: 'both'});
 
+=======
+>>>>>>> dragging_tasks
   }
 
 });
-
-Template.dashboard.rendered = function(){
-    $(document).foundation('accordion', 'reflow');
-
-}

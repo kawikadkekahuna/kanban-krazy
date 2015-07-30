@@ -6,5 +6,8 @@ TasksCollection.allow({
   },
   'update': function (userId,doc) {
     return (userId === Meteor.user()._id);
+  },
+  'remove': function (userId,doc) {
+    return (userId === Meteor.user()._id);
   }
 });

@@ -48,6 +48,11 @@
   height: 600px;
 }
 
+.taskTitle {
+
+  color: black;
+}
+
 .taskInformation{
 	visibility:hidden;
 }

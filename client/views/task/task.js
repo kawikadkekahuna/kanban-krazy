@@ -133,9 +133,70 @@ Template.task.events({
       console.log('mouseup');
       $('.todoBody').fadeTo(200, 1);
       $('.inProgressBody').fadeTo(200, 1);
-      $('.completeBody').fadeTo(200, 1);    
+      $('.completeBody').fadeTo(200, 1);
     }
-  
+
+//       event.preventDefault();
+
+//       console.log($(event.target).closest('div'));
+
+//       var newTitle = $(event.target).closest('div').find('.task_title').val();
+//       var newDescription = $(event.target).closest('div').find('.task_description').val();
+//       var task_id = $(event.target).closest('div').find('.task_id').attr('value');
+
+//       console.log("id",typeof task_id);
+//       console.log("title",typeof newTitle);
+//       console.log(newDescription);
+
+//       if (newTitle === "" && newDescription === "") {
+
+//         return;
+//       }
+
+//       if (newTitle === "") {
+
+//         console.log("1");
+
+//         TasksCollection.update(task_id, {
+
+//           $set: {
+//             description: newDescription
+//           }
+//         });
+
+//       } else if (newDescription === "") {
+
+//         console.log("2");
+
+//         TasksCollection.update(task_id, {
+
+//           $set: {
+//             title: newTitle
+//           }
+//         });
+
+//       } else {
+
+//         console.log("3", task_id);
+
+//         TasksCollection.update(task_id, {
+
+//           $set: {
+//             title: "" + newTitle + "",
+//             description: "" + newDescription + ""
+//           }
+//         }, function() {
+
+//           console.log(TasksCollection.find(task_id).fetch());
+//         });
+//       }
+
+//       $('.edit_toggle').click();
+//       $('.close-reveal-modal').click();
+//   });
+//   }
+// });
 
 
 });
+

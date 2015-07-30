@@ -1,6 +1,8 @@
 <template name='dashboard'>
   <div class='wrapper'>
-    <div class='row dashboardLogin' > {{> loginButtons}}</div>
+    <div class='row dashboardLogin'>
+      <div>{{> loginButtons}}</div>
+    </div>
     <hr>
     <div class='row headerWrapper'>
   	  <div class='header'>
@@ -55,18 +57,18 @@
 
 <template name='taskTemplate'>
 	<div class='task'>
-		<div class='editTaskControls'>
-			<span>
+		<div class='editTaskControls row'>
+			<div class="large-3 columns">
 				<div class='left_button'></div>
-			</span>
-			<span class='taskTitle'> {{title}} </span>
-			<span class='addOrDropTask'>
-				<span class='editTask'>Edit</span>
-				<span class='deleteTask'>Delete</span>
-			</span>
-			<span>
+			</div>
+			<div class='taskTitle large-3 columns'> {{title}} </div>
+			<div class='addOrDropTask large-3 columns'>
+				<div class='editTask'>Edit</div>
+				<div class='deleteTask'>Delete</div>
+			</div>
+			<div class='large-3 columns'>
 				<div class='right_button'></div>
-			</span>
+			</div>
 		</div>
 		<div class='taskInformation'>
 			<div class='taskDescription'> Description </div>

@@ -26,6 +26,7 @@ Template.dashboard.destroyed = function(){
 Template.dashboard.rendered = function(){
 
     $(document).foundation('accordion', 'reflow');
+    $(document).foundation('reveal', 'reflow');
 }
 
 Template.dashboard.onRendered(function() {
@@ -242,6 +243,9 @@ Template.dashboard.events({
 
   'click .display_toggle': function(event,template) {
 
+    event.preventDefault();
+    console.log('display_toggle clicked');
+
     if($('.hover_display_container').hasClass('show')) {
 
       $('.hover_display_container').removeClass('show').addClass('hidden');
@@ -250,6 +254,9 @@ Template.dashboard.events({
   },
 
   'click .edit_toggle': function(event,template) {
+
+    event.preventDefault();
+    console.log('edit_toggle clicked');
 
     if($('.hover_display_container').hasClass('hidden')) {
 

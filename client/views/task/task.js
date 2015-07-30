@@ -72,7 +72,7 @@ Template.task.events({
       }
     });
 
-    $('edit_toggle').click(function(event) {
+    $('.edit_toggle').click(function(event) {
 
       event.preventDefault();
       console.log('edit_toggle clicked');

@@ -32,7 +32,7 @@
           <div class='taskContainer'>
   		  		<div class='todoBody taskBody'>
   		  			{{#each tasks_to_do}}
-  		  				{{> taskTemplate}}
+  		  				{{> task}}
   		  			{{/each}}
   		  		</div>
   	  		</div>
@@ -42,7 +42,7 @@
   		  		<div class='inProgressHeader'>In Progress</div>
   		  		<div class='inProgressBody taskBody'>
               {{#each tasks_in_progress}}
-                {{> taskTemplate}}
+                {{> task}}
               {{/each}}
   		  		</div>
   	  		</div>
@@ -52,7 +52,7 @@
           <div class='taskContainer'>
   		  		<div class='completeBody taskBody'>
   		  			{{#each tasks_done}}
-  		  				{{> taskTemplate}}
+  		  				{{> task}}
   		  			{{/each}}
   		  		</div>
   		  	</div>
@@ -61,88 +61,3 @@
     </div>
   </div>
 </template>
-
-<template name='taskTemplate'>
-	<div class='task ui-draggable'>
-		<div class='editTaskControls row'>
-			<div class="large-1 columns">
-				<div class='left_button'></div>
-			</div>
-			<a class='taskTitle large-10 columns' data-reveal-id="modal{{_id}}"> {{title}}</a>
-      <div id="modal{{_id}}" class='details_div reveal-modal' data-reveal aria-hidden="true" role="dialog">
-        <!-- <div class="hover_container"> -->
-          <!-- <div class="hover_display_container show"> -->
-            <!-- <div class="row">
-              <div class="large-12 columns"> -->
-                {{description}}
-              <!-- </div>
-            </div> -->
-            <!-- <div class="row">
-              <div class="large-12 columns"> -->
-                <div class="button tiny display_toggle">Edit</div>
-                <a href="#" class="button tiny delete_button">Delete</a>
-             <!--  </div>
-            </div> -->
-          <!-- </div> -->
-          <!-- <div class="hover_edit_container hidden">
-            <div class="row">
-              <div class="tiny-3 columns">
-                <label for="title_input">Title:</label>
-              </div>
-              <div class="tiny-9 columns">
-                <input class="title_input" type="text" name="title">
-              </div>
-            </div>
-            <div class="row">
-              <div class="tiny-3 columns">
-                <label for="description_input">Description</label>
-              </div>
-              <div class="tiny-9 columns">
-                <input class="description_input" type="text" name="description">
-              </div>
-            </div>
-            <div class="row">
-              <a href="#" class="button tiny update_button">Submit</a>
-              <a href="#" class="button tiny cancel_button edit_toggle">Cancel</a>
-            </div>
-          </div> -->
-          <a class="close-reveal-modal" aria-label="Close">&#215;</a>
-        <!-- </div> -->
-      </div>
-      <!-- <ul class="accordion create_button taskTitle large-10 columns" data-accordion>
-        {{title}}
-        <li class="accordion-navigation">
-          <a href="#panel1a">Accordion 1</a>
-          <div id="panel1a" class="content">
-            <form>
-              <input type='text'>
-              <input type='text'>
-              <input type='text'>
-            </form>
-          </div>
-        </li>
-      </ul> -->
-			<!-- <div class='addOrDropTask large-5 columns'>
-				<div class='editTask'>Edit</div>
-				<div class='deleteTask'>Delete</div> -->
-			<!-- </div> -->
-			<div class='large-1 columns'>
-				<div class='right_button'></div>
-			</div>
-		</div>
-		<div class='taskInformation'>
-			<div class='taskDescription'> Description </div>
-			<div class='taskComments'> Comments </div>
-		</div>
-	</div>
-</template>
-
-<!-- <template name='taskModal'>
-	<div id="myModal" class="reveal-modal">
-	  <h2>Awesome. I have it.</h2>
-	  <p class="lead">Your couch.  It is mine.</p>
-	  <p>Im a cool paragraph that lives inside of an even cooler modal. Wins</p>
-	  <a class="close-reveal-modal">&#215;</a>
-	</div>
-</template>
- -->

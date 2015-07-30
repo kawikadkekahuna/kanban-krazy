@@ -23,8 +23,6 @@ Template.dashboard.destroyed = function() {
   console.log('destroyed');
 };
 
-<<<<<<< HEAD
-=======
 
 Template.dashboard.rendered = function() {
   $(document).foundation('accordion', 'reflow');
@@ -69,7 +67,6 @@ Template.dashboard.onRendered(function() {
     });
 });
 
->>>>>>> dragging_tasks
 Template.dashboard.helpers({
 
   tasks_to_do: function() {
@@ -84,16 +81,10 @@ Template.dashboard.helpers({
     });
 
   },
-<<<<<<< HEAD
-  tasks_done:function(){
-    return TasksCollection.find({status:"DONE"});
-=======
   tasks_done: function() {
     return TasksCollection.find({
       status: "DONE"
     });
-
->>>>>>> dragging_tasks
   }
 
 });
@@ -243,14 +234,6 @@ Template.dashboard.events({
 
     template.find('.title_input').value = "";
     template.find('.description_input').value = "";
-<<<<<<< HEAD
-  },
-
-  'mouseover .task':function(){
-    $('.task').draggable({snap:'.taskContainer',snapMode: 'both'});
-
-=======
->>>>>>> dragging_tasks
   }
 
 });

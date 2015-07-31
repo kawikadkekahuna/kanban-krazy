@@ -7,7 +7,7 @@
       <a class='taskTitle large-10 columns' data-reveal-id="modal{{_id}}"> {{title}}</a>
       <div id="modal{{_id}}" class='details_div reveal-modal' data-reveal aria-hidden="true" role="dialog">
         <div class="hover_container">
-          <div class="hover_display_container show"> 
+          <div class="hover_display_container show">
             <div class="row">
               <div class="large-12 columns">
                 {{description}}
@@ -15,25 +15,26 @@
             </div>
             <div class="row">
               <div class="large-12 columns">
-                <a href="#" class="display_toggle button tiny ">Edit</a>
+                <input class="task_id" name="task_id" type="hidden" value={{_id}}>
+                <a href="#" class="button tiny display_toggle">Edit</a>
                 <a href="#" class="button tiny delete_button">Delete</a>
               </div>
             </div>
           </div>
           <div class="hover_edit_container hidden">
             <div class="row">
-              <div class="tiny-3 columns">
+              <div class="tiny-2 columns">
                 <label for="title_input">Title:</label>
               </div>
-              <div class="tiny-9 columns">
+              <div class="tiny-10 columns">
                 <input class="title_input" type="text" name="title">
               </div>
             </div>
             <div class="row">
-              <div class="tiny-3 columns">
+              <div class="tiny-2 columns">
                 <label for="description_input">Description</label>
               </div>
-              <div class="tiny-9 columns">
+              <div class="tiny-10 columns">
                 <input class="description_input" type="text" name="description">
               </div>
             </div>

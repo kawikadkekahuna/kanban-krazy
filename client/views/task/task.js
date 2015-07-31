@@ -83,6 +83,16 @@ Template.task.events({
         $('.hover_edit_container').removeClass('show').addClass('hidden');
       }
     });
+
+    $('.delete_button').click(function(event) {
+
+      event.preventDefault();
+
+      console.log($(event.target).closest('div').find('.task_id').attr('value'));
+
+      TasksCollection.remove($(event.target).closest('div').find('.task_id').attr('value'));
+      $('.close-reveal-modal').click();
+    });
   },
 
   //UPDATE Title/Description

@@ -1,12 +1,12 @@
-<template name='task'>
-  <div class='task'>
+<template name="task">
+  <div class="task">
     <input class="task_id" name="task_id" type="hidden" value={{_id}}>
-    <div class='editTaskControls'>
+    <div class="editTaskControls">
       <div class="large-1 columns">
-        <div class='left_button direction_button'></div>
+        <div class="left_button direction_button"></div>
       </div>
-      <a class='taskTitle large-9 columns' data-reveal-id="description_modal{{_id}}"> {{title}}</a>
-      <div id="description_modal{{_id}}" class='details_div reveal-modal medium' data-reveal aria-hidden="true" role="dialog">
+      <a class="taskTitle large-9 columns" data-reveal-id="description_modal{{_id}}"> {{title}}</a>
+      <div id="description_modal{{_id}}" class="details_div reveal-modal medium" data-reveal aria-hidden="true" role="dialog">
         <div class="description_container">
           <span>{{description}}</span>
         </div>
@@ -14,7 +14,7 @@
       </div>
       <div class="edit_delete_button_container">
         <input class="edit_button task_button" type="button" data-reveal-id="edit_modal{{_id}}">
-        <div id="edit_modal{{_id}}" class='reveal-modal medium edit_modal' data-reveal aria-hidden="true" role="dialog">
+        <div id="edit_modal{{_id}}" class="reveal-modal medium edit_modal" data-reveal aria-hidden="true" role="dialog">
           <div class="row">
             <div class="tiny-2 columns">
               <label for="title_input">Title:</label>
@@ -41,8 +41,8 @@
         </div>
         <input class="delete_button task_button" type="button">
       </div>
-      <div class='large-2 columns'>
-        <div class='right_button direction_button'></div>
+      <div class="large-2 columns">
+        <div class="right_button direction_button"></div>
       </div>
     </div>
   </div>

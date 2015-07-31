@@ -19,7 +19,7 @@ Template.task.rendered = function() {
 }
 
 Template.task.onRendered(function() {
-
+  $(document).foundation('reveal', 'reflow');
   var todo_tasks = $('.todoBody').find('.left_button').hide();
   var done_tasks = $('.completeBody').find('.right_button').hide();
 
@@ -43,95 +43,58 @@ Template.task.events({
     event.preventDefault();
 
     TasksCollection.remove($(event.target).closest('.task').find('.task_id').attr('value'));
-    // $('.close-reveal-modal').click();
   },
 
   'click .edit_button': function(event, template) {
 
-    $(document).foundation('reveal', 'reflow');
-
-    // $('.display_toggle').click(function(event) {
-
-    //   event.preventDefault();
-
-    //   if ($('.hover_display_container').hasClass('show')) {
-
-    //     $('.hover_display_container').removeClass('show').addClass('hidden');
-    //     $('.hover_edit_container').removeClass('hidden').addClass('show');
-
-    //     $('.hover_edit_container').find('.title_input').val($(event.target).closest('div').find('.task_title').attr('value'));
-    //     $('.hover_edit_container').find('.description_input').val($(event.target).closest('div').find('.task_description').attr('value'));
-    //   }
-    // });
-
-    // $('.edit_toggle').click(function(event) {
-
-    //   event.preventDefault();
-
-    //   if ($('.hover_display_container').hasClass('hidden')) {
-
-    //     $('.hover_display_container').removeClass('hidden').addClass('show');
-    //     $('.hover_edit_container').removeClass('show').addClass('hidden');
-    //   }
-    // });
-
-    // $('.delete_button').click(function(event) {
-
-    //   event.preventDefault();
-
-    //   TasksCollection.remove($(event.target).closest('.task').find('.task_id').attr('value'));
-    //   // $('.close-reveal-modal').click();
-    // });
 
     $('.update_button').click(function(event) {
 
-        event.preventDefault();
+      event.preventDefault();
 
-        var newTitle = $(event.target).closest('.reveal-modal').find('.title_input').val();
-        var newDescription = $(event.target).closest('.reveal-modal').find('.description_input').val();
-        var task_id = $(event.target).closest('div').find('.task_id').attr('value');
+      var newTitle = $(event.target).closest('.reveal-modal').find('.title_input').val();
+      var newDescription = $(event.target).closest('.reveal-modal').find('.description_input').val();
+      var task_id = $(event.target).closest('div').find('.task_id').attr('value');
 
-        console.log(task_id);
-        console.log(newTitle);
-        console.log(newDescription);
+      console.log(task_id);
+      console.log(newTitle);
+      console.log(newDescription);
 
-        if (newTitle === "" && newDescription === "") {
-          return;
-        }
-        if (newTitle === "") {
+      if (newTitle === "" && newDescription === "") {
+        return;
+      }
+      if (newTitle === "") {
 
-          TasksCollection.update(task_id, {
-            $set: {
-              description: newDescription
-            }
-          });
-        } else if (newDescription === "") {
+        TasksCollection.update(task_id, {
+          $set: {
+            description: newDescription
+          }
+        });
+      } else if (newDescription === "") {
 
-          TasksCollection.update(task_id, {
-            $set: {
-              title: newTitle
-            }
-          });
-        } else {
+        TasksCollection.update(task_id, {
+          $set: {
+            title: newTitle
+          }
+        });
+      } else {
 
-          TasksCollection.update(task_id, {
-            $set: {
-              title: newTitle,
-              description: newDescription
-            }
-          });
-        }
-      // $('.edit_toggle').click();
+        TasksCollection.update(task_id, {
+          $set: {
+            title: newTitle,
+            description: newDescription
+          }
+        });
+      }
       $('.close-edit-box').click();
 
-      });
+    });
 
-    },
-    'mouseup .task' : function(event, template) {
-      console.log('mouseup');
-      $('.todoBody').fadeTo(200, 1);
-      $('.inProgressBody').fadeTo(200, 1);
-      $('.completeBody').fadeTo(200, 1);
-    }
+  },
+  'mouseup .task': function(event, template) {
+    console.log('mouseup');
+    $('.todoBody').fadeTo(200, 1);
+    $('.inProgressBody').fadeTo(200, 1);
+    $('.completeBody').fadeTo(200, 1);
+  }
 });
-

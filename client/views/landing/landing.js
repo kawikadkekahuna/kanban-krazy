@@ -1,14 +1,11 @@
 Template.landing.created = function(){
-	console.log('landing template');
 
 };
 
 Template.landing.update = function(){
-	console.log('updated');
 };
 
 Template.landing.destroyed = function(){
-	Router.go('/dashboard');
 };
 
 
@@ -20,7 +17,6 @@ Template.landing.events({
 
 	'click .landing-button': function(event,template){
 		event.preventDefault();
-		console.log('button clicked')
 		var email = $('.landing-email').val();
 		var username = $('.landing-username').val();
 		var password = $('.landing-password').val();
@@ -29,7 +25,6 @@ Template.landing.events({
 			password: password,
 			email: email,
 		},function(){
-			console.log('user added');
 		});
 	},
 
@@ -39,9 +34,17 @@ Template.landing.events({
 			event.preventDefault();
 			var email = $('.landing-login-email').val();
 			var password = $('.landing-login-password').val();
-			Meteor.loginWithPassword(email,password,function(){
-				console.log('logged in');
-				Router.redirect('/dashboard');
+			Meteor.loginWithPassword(email,password);
+
+			Accounts.onLogin(function(){
+				Router.go('/dashboard');
+				$('.close-landing-login').click();
+				$('.landing-login-submit').unbind('click');
+			});
+
+			Accounts.onLoginFailure(function(){
+				$('.close-landing-login').click();
+				$('.landing-login-submit').unbind('click');
 			});
 
 		});	

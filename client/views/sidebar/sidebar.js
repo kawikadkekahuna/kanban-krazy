@@ -1,9 +1,7 @@
 Template.sidebar.created = function() {
-	// console.log('register template');
 };
 
 Template.sidebar.destroyed = function() {
-	// Router.go('/dashboard');
 };
 
 

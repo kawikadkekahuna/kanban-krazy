@@ -20,6 +20,9 @@ Template.task.rendered = function() {
 
 Template.task.onRendered(function() {
 
+  var todo_tasks = $('.todoBody').find('.left_button').hide();
+  var done_tasks = $('.completeBody').find('.right_button').hide();
+
 });
 
 Template.task.helpers({
@@ -28,50 +31,69 @@ Template.task.helpers({
 
 Template.task.events({
 
-  'click .taskTitle': function(event, template) {
+  'click .show_edit': function(event, template) {
+
+    event.preventDefault();
+
+
+  },
+
+  'click .delete_button': function(event, template) {
+
+    event.preventDefault();
+
+    TasksCollection.remove($(event.target).closest('.task').find('.task_id').attr('value'));
+    // $('.close-reveal-modal').click();
+  },
+
+  'click .edit_button': function(event, template) {
 
     $(document).foundation('reveal', 'reflow');
 
-    $('.display_toggle').click(function(event) {
+    // $('.display_toggle').click(function(event) {
 
-      event.preventDefault();
+    //   event.preventDefault();
 
-      if ($('.hover_display_container').hasClass('show')) {
+    //   if ($('.hover_display_container').hasClass('show')) {
 
-        $('.hover_display_container').removeClass('show').addClass('hidden');
-        $('.hover_edit_container').removeClass('hidden').addClass('show');
+    //     $('.hover_display_container').removeClass('show').addClass('hidden');
+    //     $('.hover_edit_container').removeClass('hidden').addClass('show');
 
-        $('.hover_edit_container').find('.title_input').val($(event.target).closest('div').find('.task_title').attr('value'));
-        $('.hover_edit_container').find('.description_input').val($(event.target).closest('div').find('.task_description').attr('value'));
-      }
-    });
+    //     $('.hover_edit_container').find('.title_input').val($(event.target).closest('div').find('.task_title').attr('value'));
+    //     $('.hover_edit_container').find('.description_input').val($(event.target).closest('div').find('.task_description').attr('value'));
+    //   }
+    // });
 
-    $('.edit_toggle').click(function(event) {
+    // $('.edit_toggle').click(function(event) {
 
-      event.preventDefault();
+    //   event.preventDefault();
 
-      if ($('.hover_display_container').hasClass('hidden')) {
+    //   if ($('.hover_display_container').hasClass('hidden')) {
 
-        $('.hover_display_container').removeClass('hidden').addClass('show');
-        $('.hover_edit_container').removeClass('show').addClass('hidden');
-      }
-    });
+    //     $('.hover_display_container').removeClass('hidden').addClass('show');
+    //     $('.hover_edit_container').removeClass('show').addClass('hidden');
+    //   }
+    // });
 
-    $('.delete_button').click(function(event) {
+    // $('.delete_button').click(function(event) {
 
-      event.preventDefault();
+    //   event.preventDefault();
 
-      TasksCollection.remove($(event.target).closest('div').find('.task_id').attr('value'));
-      $('.close-reveal-modal').click();
-    });
+    //   TasksCollection.remove($(event.target).closest('.task').find('.task_id').attr('value'));
+    //   // $('.close-reveal-modal').click();
+    // });
 
     $('.update_button').click(function(event) {
 
         event.preventDefault();
 
-        var newTitle = $(event.target).closest('.hover_edit_container').find('.title_input').val();
-        var newDescription = $(event.target).closest('.hover_edit_container').find('.description_input').val();
+        var newTitle = $(event.target).closest('.reveal-modal').find('.title_input').val();
+        var newDescription = $(event.target).closest('.reveal-modal').find('.description_input').val();
         var task_id = $(event.target).closest('div').find('.task_id').attr('value');
+
+        console.log(task_id);
+        console.log(newTitle);
+        console.log(newDescription);
 
         if (newTitle === "" && newDescription === "") {
           return;
@@ -99,7 +121,7 @@ Template.task.events({
             }
           });
         }
-      // $('.edit_toggle').click(); 
+      // $('.edit_toggle').click();
       $('.close-edit-box').click();
 
       });

@@ -119,26 +119,6 @@ body{
   float: right;
 }
 
-.editTaskControls{
-  display:flex;
-  align-items:center;
-}
-
-.task{
-  background-color:orange;
-  border:1px solid black;
-  cursor:pointer;
-}
-
-.taskContainer{
-  overflow:auto;
-  overflow-x:hidden;
-}
-
-.taskBody{
-  height:500px;
-}
-
 .todoBody {
 
   font-size:12px;
@@ -176,21 +156,21 @@ body{
   background-image:url('http://png-5.findicons.com/files/icons/2356/bremen/16/plus.png');
 }
 
-.hover_edit_container.show {
-  display:block;
-}
+// .hover_edit_container.show {
+//   display:block;
+// }
 
-.hover_edit_container.hidden {
-  display:none;
-}
+// .hover_edit_container.hidden {
+//   display:none;
+// }
 
-.hover_display_container.show {
-  display:block;
-}
+// .hover_display_container.show {
+//   display:block;
+// }
 
-.hover_display_container.hidden {
-  display:none;
-}
+// .hover_display_container.hidden {
+//   display:none;
+// }
 
 .gu-mirror {
   position: fixed !important;
@@ -300,7 +280,7 @@ body{
 }
 
 .nav-menu-dropdown{
-  display: block; 
+  display: block;
   background-color: rgba(255,255,255,0.9);
   /*text-shadow: 0 -1px 0 #000;*/
 }
@@ -394,13 +374,13 @@ display:table;
 border-collapse:collapse;
 border-spacing:0;
 color:#999;
- font-family: arial;
+font-family: arial;
 font-size: 14px;
 text-decoration:none;
 -webkit-transform:translateZ(0) scale(1,1);
 -webkit-transition:all .1s linear;
 transition:all .1s linear;
-  
+
 }
 
 .main-menu .nav-icon {
@@ -521,4 +501,54 @@ height: 100%;
     }
   }   
 
+.taskContainer{
+  overflow:auto;
+  overflow-x:hidden;
+
+  .taskBody{
+    height:500px;
+
+    .task{
+      -moz-border-radius: 15px;
+      -webkit-border-radius: 15px;
+      border-radius: 15px; /* future proofing */
+      -khtml-border-radius: 15px; /* for old Konqueror browsers */
+      background-color:orange;
+      border:1px solid black;
+      cursor:pointer;
+      margin: 1px;
+
+      .editTaskControls{
+        display:flex;
+        align-items:center;
+        height: 60px;
+      }
+    }
+  }
+}
+
+.taskTitle {
+
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.task_button {
+
+  margin: 2px;
+  width: 50px;
+  font-family: arial;
+  font-size: 10px;
+}
+
+.details_div {
+
+  text-align: center;
+}
+
+.description_container {
+
+  width: 90%;
+  font-size: 12px;
+  text-align: left;
 }

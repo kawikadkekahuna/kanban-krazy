@@ -1,0 +1,292 @@
+.wrapper{
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header{
+  background-color:transparent;
+}
+
+body{
+  background-image:url('http://subtlepatterns.com/patterns/wood_pattern.png');
+}
+
+.title{
+  font-size:50px;
+  font-weight: 800;
+}
+
+.create_button{
+  text-align:right;
+}
+
+.dashboardWrapper{
+  /*max-height: 400px;*/
+  display:inline-flex;
+  /*overflow-y: scroll;*/
+}
+
+.dashboardLogin {
+
+  margin: 5px auto;
+}
+
+.todoWrapper{
+  background-color:#CC0000;
+  margin: 2px;
+  height: 600px;
+}
+
+.todoHeader{
+  font-size:30px;
+  font-weight: 600;
+}
+
+.addOrDropTask{
+  visibility: hidden;
+}
+
+.inProgressWrapper{
+  background-color:#ffcc33;
+  margin: 2px;
+  height: 600px;
+}
+
+.taskTitle {
+
+  color: black;
+}
+
+.taskInformation{
+  visibility:hidden;
+}
+
+.inProgressHeader{
+  font-size:30px;
+  font-weight: 600;
+}
+
+.completeWrapper{
+  background-color:#009933;
+  margin: 2px;
+  height: 600px;
+}
+
+.completeHeader{
+  font-size:30px;
+  font-weight: 600;
+}
+
+.left_button{
+  background-image:url('http://www.isp.msu.edu/isp_common/images/arrow-small-left.png');
+  background-repeat:no-repeat;
+  width:15px;
+  height:15px;
+  background-color:transparent;
+}
+.right_button{
+
+  background-image:url('http://www.isp.msu.edu/isp_common/images/arrow-small-right.png');
+  background-repeat:no-repeat;
+  width:15px;
+  height:15px;
+  background-color:transparent;
+  float: right;
+}
+
+.editTaskControls{
+  display:flex;
+  align-items:center;
+}
+
+.task{
+  background-color:orange;
+  border:1px solid black;
+  cursor:pointer;
+}
+
+.taskContainer{
+  overflow:auto;
+  overflow-x:hidden;
+}
+
+.taskBody{
+  height:500px;
+}
+
+.todoBody {
+
+  font-size:12px;
+}
+
+.inProgressBody {
+
+  font-size:12px;
+}
+
+.completeBody {
+
+  font-size:12px;
+}
+
+.radioStatus{
+  width:200px;
+  margin:auto !important;
+}
+
+.addPhotoWrapper{
+  width:25px;
+  height:25px;
+}
+
+.accordion-navigation{
+  background-image:url('http://png-5.findicons.com/files/icons/2356/bremen/16/plus.png');
+  background-repeat:no-repeat;
+}
+
+.addTaskIcon{
+  width:25px;
+  height:25px;
+  background:none !important;
+  background-image:url('http://png-5.findicons.com/files/icons/2356/bremen/16/plus.png');
+}
+
+.hover_edit_container.show {
+  display:block;
+}
+
+.hover_edit_container.hidden {
+  display:none;
+}
+
+.hover_display_container.show {
+  display:block;
+}
+
+.hover_display_container.hidden {
+  display:none;
+}
+
+.gu-mirror {
+  position: fixed !important;
+  margin: 0 !important;
+  z-index: 9999 !important;
+}
+.gu-hide {
+  display: none !important;
+}
+.gu-unselectable {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+.gu-transit {
+  opacity: 0.2;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+  filter: alpha(opacity=20);
+}
+.gu-mirror {
+  opacity: 0.8;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  filter: alpha(opacity=80);
+}
+
+.curved{
+  border-radius:25px !important;
+}
+
+.top-bar{
+  background-image: url('http://subtlepatterns.com/patterns/symphony.png');
+}
+
+.top-bar-section .ul{
+  background-image: url('http://subtlepatterns.com/patterns/symphony.png') !important;
+}
+
+.nav_bar_wrapper{
+  border:1px solid black;
+  height:50px;
+  margin-bottom:150px;
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+
+  .nav-bar-list{
+    text-align: left;
+    display: inline;
+    margin: 0;
+    padding: 15px 4px 17px 0;
+    list-style: none;
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+
+   .nav-bar-item {
+      font: bold 12px/18px sans-serif;
+      display: inline-block;
+      margin-right: -4px;
+      position: relative;
+      padding: 15px 20px;
+      background: transparent;
+      cursor: pointer;
+      -webkit-transition: all 0.2s;
+      -moz-transition: all 0.2s;
+      -ms-transition: all 0.2s;
+      -o-transition: all 0.2s;
+      transition: all 0.2s;
+
+      ul {
+        padding: 0;
+        position: absolute;
+        top: 48px;
+        left: -20px;
+        width: 150px;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+        -webkit-transiton: opacity 0.2s;
+        -moz-transition: opacity 0.2s;
+        -ms-transition: opacity 0.2s;
+        -o-transition: opacity 0.2s;
+        -transition: opacity 0.2s;
+      }
+
+    .nav-menu-dropdown{
+      display: block; 
+      background-color: rgba(255,255,255,0.5);
+      /*text-shadow: 0 -1px 0 #000;*/
+
+      li{
+        background-color:transparent;
+      }
+    }
+
+      .nav-menu-dropdown:hover{
+        background-color:rgba(255,255,255,0.5);
+      }
+
+    }
+
+    .nav-bar-item:hover{
+      background-color: rgba(255,255,255,0.5);
+    }
+
+
+   }
+
+}
+
+
+
+/*ul li:hover ul {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}*/

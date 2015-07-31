@@ -1,15 +1,9 @@
 'use strict';
 
-// var DEFAULT_STATUS = "TO DO";
-// var TO_DO_STATUS = "TO DO";
-// var IN_PROGRESS_STATUS = "IN PROGRESS";
-// var DONE_STATUS = "DONE";
-
 var IS_DRAGGING = false;
 
 Template.task.created = function() {
 
-  // $(".details_div").hide();
 };
 
 Template.task.update = function() {
@@ -32,23 +26,6 @@ Template.task.onRendered(function() {
 
 Template.task.helpers({
 
-  // tasks_to_do: function() {
-  //   return TasksCollection.find({
-  //     status: "TO DO"
-  //   });
-  // },
-
-  // tasks_in_progress: function() {
-  //   return TasksCollection.find({
-  //     status: "IN PROGRESS"
-  //   });
-
-  // },
-  // tasks_done: function() {
-  //   return TasksCollection.find({
-  //     status: "DONE"
-  //   });
-  // }
 });
 
 Template.task.events({
@@ -91,14 +68,17 @@ Template.task.events({
     });
 
     $('.update_button').click(function(event) {
+
         event.preventDefault();
-        console.log($(event.target).closest('div'));
-        var newTitle = $(event.target).closest('div').find('.task_title').val();
-        var newDescription = $(event.target).closest('div').find('.task_description').val();
+
+        var newTitle = $(event.target).closest('.hover_edit_container').find('.title_input').val();
+        var newDescription = $(event.target).closest('.hover_edit_container').find('.description_input').val();
         var task_id = $(event.target).closest('div').find('.task_id').attr('value');
+
         console.log(task_id);
         console.log(newTitle);
         console.log(newDescription);
+
         if (newTitle === "" && newDescription === "") {
           return;
         }
@@ -135,68 +115,5 @@ Template.task.events({
       $('.inProgressBody').fadeTo(200, 1);
       $('.completeBody').fadeTo(200, 1);
     }
-
-//       event.preventDefault();
-
-//       console.log($(event.target).closest('div'));
-
-//       var newTitle = $(event.target).closest('div').find('.task_title').val();
-//       var newDescription = $(event.target).closest('div').find('.task_description').val();
-//       var task_id = $(event.target).closest('div').find('.task_id').attr('value');
-
-//       console.log("id",typeof task_id);
-//       console.log("title",typeof newTitle);
-//       console.log(newDescription);
-
-//       if (newTitle === "" && newDescription === "") {
-
-//         return;
-//       }
-
-//       if (newTitle === "") {
-
-//         console.log("1");
-
-//         TasksCollection.update(task_id, {
-
-//           $set: {
-//             description: newDescription
-//           }
-//         });
-
-//       } else if (newDescription === "") {
-
-//         console.log("2");
-
-//         TasksCollection.update(task_id, {
-
-//           $set: {
-//             title: newTitle
-//           }
-//         });
-
-//       } else {
-
-//         console.log("3", task_id);
-
-//         TasksCollection.update(task_id, {
-
-//           $set: {
-//             title: "" + newTitle + "",
-//             description: "" + newDescription + ""
-//           }
-//         }, function() {
-
-//           console.log(TasksCollection.find(task_id).fetch());
-//         });
-//       }
-
-//       $('.edit_toggle').click();
-//       $('.close-reveal-modal').click();
-//   });
-//   }
-// });
-
-
 });
 

@@ -45,7 +45,7 @@ Template.dashboard.onRendered(function() {
 
       $('.'+container).fadeTo(OPACITY_SPEED,OPACITY_BRIGHTEN);
 
-      $('.'+source).fadeTo(OPACITY_SPEED,OPACITY_BRIGHTEN);      
+      $('.'+source).fadeTo(OPACITY_SPEED,OPACITY_BRIGHTEN);
 
       var id = Blaze.getData(el)._id;
 
@@ -212,12 +212,12 @@ Template.dashboard.events({
   },
 
   //DELETE
-  'click .delete_button': function(event, template) {
+  // 'click .delete_button': function(event, template) {
 
-    event.preventDefault();
+  //   event.preventDefault();
 
-    TasksCollection.remove(this._id);
-  },
+  //   TasksCollection.remove(this._id);
+  // },
 
   'click .submitButton ': function(event, template) {
 
@@ -243,27 +243,28 @@ Template.dashboard.events({
 
     template.find('.title_input').value = "";
     template.find('.description_input').value = "";
-  },
-  'click .display_toggle': function(event,template) {
+  }
+  // },
+  // 'click .display_toggle': function(event,template) {
 
-    event.preventDefault();
+  //   event.preventDefault();
 
     // if($('.hover_display_container').hasClass('show')) {
 
     //   $('.hover_display_container').removeClass('show').addClass('hidden');
     //   $('.hover_edit_container').removeClass('hidden').addClass('show');
     // }
-  },
+  // },
 
-  'click .edit_toggle': function(event,template) {
+  // 'click .edit_toggle': function(event,template) {
 
-    event.preventDefault();
+  //   event.preventDefault();
 
-    if($('.hover_display_container').hasClass('hidden')) {
+  //   if($('.hover_display_container').hasClass('hidden')) {
 
-      $('.hover_display_container').removeClass('hidden').addClass('show');
-      $('.hover_edit_container').removeClass('show').addClass('hidden');
-    }
+  //     $('.hover_display_container').removeClass('hidden').addClass('show');
+  //     $('.hover_edit_container').removeClass('show').addClass('hidden');
+  //   }
 
-  }
+  // }
 });

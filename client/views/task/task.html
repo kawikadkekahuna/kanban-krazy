@@ -15,7 +15,10 @@
             </div>
             <div class="row">
               <div class="large-12 columns">
+              {{_id}}
                 <input class="task_id" name="task_id" type="hidden" value={{_id}}>
+                <input class="task_title" name="task_title" type="hidden" value={{title}}>
+                <input class="task_description" name="task_description" type="hidden" value={{description}}>
                 <a href="#" class="button tiny display_toggle">Edit</a>
                 <a href="#" class="button tiny delete_button">Delete</a>
               </div>
@@ -39,6 +42,9 @@
               </div>
             </div>
             <div class="row">
+              <input class="task_id" name="task_id" type="hidden" value={{_id}}>
+              <input class="task_title" name="task_title" type="hidden" value={{title}}>
+              <input class="task_description" name="task_description" type="hidden" value={{description}}>
               <a href="#" class="button tiny update_button">Submit</a>
               <a href="#" class="button tiny cancel_button edit_toggle">Cancel</a>
             </div>

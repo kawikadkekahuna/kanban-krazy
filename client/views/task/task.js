@@ -55,28 +55,25 @@ Template.task.events({
 
   'click .taskTitle': function(event, template) {
 
-    console.log('taskTitle clicked');
-
-    // $(document).foundation('dropdown', 'reflow');
     $(document).foundation('reveal', 'reflow');
 
-    //edit button
     $('.display_toggle').click(function(event) {
 
       event.preventDefault();
-      console.log('display_toggle clicked');
 
       if($('.hover_display_container').hasClass('show')) {
 
         $('.hover_display_container').removeClass('show').addClass('hidden');
         $('.hover_edit_container').removeClass('hidden').addClass('show');
+
+        $('.hover_edit_container').find('.title_input').val($(event.target).closest('div').find('.task_title').attr('value'));
+        $('.hover_edit_container').find('.description_input').val($(event.target).closest('div').find('.task_description').attr('value'));
       }
     });
 
     $('.edit_toggle').click(function(event) {
 
       event.preventDefault();
-      console.log('edit_toggle clicked');
 
       if($('.hover_display_container').hasClass('hidden')) {
 
@@ -89,55 +86,66 @@ Template.task.events({
 
       event.preventDefault();
 
-      console.log($(event.target).closest('div').find('.task_id').attr('value'));
-
       TasksCollection.remove($(event.target).closest('div').find('.task_id').attr('value'));
       $('.close-reveal-modal').click();
     });
-  },
 
-  //UPDATE Title/Description
-  'click .update_button': function(event, template) {
+    $('.update_button').click(function(event) {
 
-    event.preventDefault();
+      event.preventDefault();
 
-    var newTitle = template.find('.title_input').value;
-    var newDescription = template.find('.description_input').value;
+      console.log($(event.target).closest('div'));
 
-    if (newTitle === "" && newDescription === "") {
+      var newTitle = $(event.target).closest('div').find('.task_title').val();
+      var newDescription = $(event.target).closest('div').find('.task_description').val();
+      var task_id = $(event.target).closest('div').find('.task_id').attr('value');
 
-      return;
-    }
+      console.log(task_id);
+      console.log(newTitle);
+      console.log(newDescription);
 
-    if (newTitle === "") {
+      if (newTitle === "" && newDescription === "") {
 
-      TasksCollection.update(this._id, {
-        description: newDescription
-      });
+        return;
+      }
 
-    } else if (newDescription === "") {
+      if (newTitle === "") {
 
-      TasksCollection.update(this._id, {
-        title: newTitle
-      });
+        console.log("1");
 
-    } else {
+        TasksCollection.update(task_id, {
 
-      TasksCollection.update(this._id, {
-        title: newTitle,
-        description: newDescription
-      });
-    }
+          $set: {
+            description: newDescription
+          }
+        });
 
-    template.find('.title_input').value = "";
-    template.find('.description_input').value = "";
-  },
+      } else if (newDescription === "") {
 
-  //DELETE
-  'click .delete_button': function(event, template) {
+        console.log("2");
 
-    event.preventDefault();
+        TasksCollection.update(task_id, {
 
-    TasksCollection.remove(this._id);
+          $set: {
+            title: newTitle
+          }
+        });
+
+      } else {
+
+        console.log("3");
+
+        TasksCollection.update(task_id, {
+
+          $set: {
+            title: newTitle,
+            description: newDescription
+          }
+        });
+      }
+
+      $('.edit_toggle').click();
+      $('.close-reveal-modal').click();
+  });
   }
 });

@@ -80,8 +80,6 @@ Template.dashboard.onRendered(function() {
 
       $('.' + container).fadeTo(OPACITY_SPEED, OPACITY_FADE);
     });
-
-
 });
 
 
@@ -111,15 +109,8 @@ Template.dashboard.events({
   //DETAILS
   'click .taskTitle': function(event, template) {
 
-    // $(document).foundation('dropdown', 'reflow');
     $(document).foundation('reveal', 'reflow');
   },
-
-  // CREATE
-  // 'click .create_button': function(event, template) {
-
-
-  // },
 
   //UPDATE Title/Description
   'click .update_button': function(event, template) {
@@ -210,14 +201,6 @@ Template.dashboard.events({
     }
 
   },
-
-  //DELETE
-  // 'click .delete_button': function(event, template) {
-
-  //   event.preventDefault();
-
-  //   TasksCollection.remove(this._id);
-  // },
 
   'click .submitButton ': function(event, template) {
 

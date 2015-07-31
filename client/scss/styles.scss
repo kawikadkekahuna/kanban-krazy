@@ -187,7 +187,7 @@ body{
 .nav_bar_wrapper{
   border:1px solid black;
   height:50px;
-  margin-bottom:150px;
+  margin-bottom:20px;
   cursor: pointer;
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
@@ -195,6 +195,7 @@ body{
   -o-transition: all 0.2s;
   transition: all 0.2s;
 
+<<<<<<< HEAD
   .nav-bar-list{
     text-align: left;
     display: inline;
@@ -307,8 +308,16 @@ body{
   }
 }
 
-/*ul li:hover ul {
+.nav-menu-dropdown li{
+  background-color:transparent;
+}
+
+.nav-menu-dropdown:hover{
+  background-color:rgba(255,255,255,0.9);
+}
+
+ul li:hover ul {
   display: block;
   opacity: 1;
   visibility: visible;
-}*/
+}

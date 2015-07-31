@@ -1,15 +1,37 @@
 <template name='navigation'>
-	<div class='large-12 columns navContainer'>
+	<div class='large-13 columns nav-bar-container'>
 		<ul class='nav-bar-list'>
-			<li class='large-2 columns nav-bar-item'>Home</li>
-			<li class='large-2 columns nav-bar-item'>About</li>
-			<li class='large-2 columns nav-bar-item'>FAQ</li>
-			<li class='large-2 columns nav-bar-item'>Contact</li>	
-			<li class='large-2 columns nav-bar-item'>Menu
+			<li class='large-2 columns nav-bar-item nav-bar-home'>
+				<a href='/'>Home</a>
+			</li>
+			<li class='large-2 columns nav-bar-item nav-bar-about'>
+				<a href='/about'>About</a>
+			</li>
+			<li class='large-2 columns nav-bar-item nav-bar-faq'>
+				<a href='/faq'>FAQ</a>
+			</li>
+			<li class='large-2 columns nav-bar-item nav-bar-contact'>
+				<a href='/contact'>Contact</a>
+			</li>	
+			<li class='large-2 columns nav-bar-item nav-bar-menu'>Menu
 				<ul class='nav-menu-dropdown large-12 columns'>
-					<li class='large-centered large-12 columns'>My Profile</li>
-					<li class='large-centered large-12 columns'>Add a Task</li>
-					<li class='large-centered large-12 columns'>Logout</li>
+					<li class='large-centered large-12 columns'>
+							<a href='#'>My Profile</a>
+					</li>
+					<li class='large-centered large-12 columns nav-add-task'>
+							<a href='#' data-reveal-id='addTaskModal'>Add a Task!</a>
+							<div id='addTaskModal' class='reveal-modal' data-reveal aria-labelledby='AddTask' aria-hidden='true' role='dialog'>
+							  <form>
+							  	<input class='task-title' type='text' value='Task Title'>
+							  	<input class='task-description' type='text' value='Description'>
+									<button class='add-task' type='submit'>Add!</button>
+							  </form>
+							  <a class='close-reveal-modal close-add-task' aria-label='Close'>&#215;</a>
+							</div>
+					</li>
+					<li class='large-centered large-12 columns'>
+						<a href='/logout'>Logout</a>
+					</li>
 				</ul>
 			</li>
 		</ul>

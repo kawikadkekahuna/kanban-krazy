@@ -1,7 +1,5 @@
 'use strict';
 
-var IS_DRAGGING = false;
-
 Template.task.created = function() {
 
 };
@@ -103,9 +101,10 @@ Template.task.events({
           });
         }
       $('.task_title').unbind('click');
-      $('.edit_toggle').click(); $('.close-reveal-modal').click();
-      });
 
+      // $('.edit_toggle').click();
+      $('.close-edit-box').click();
+      });
     },
     'mouseup .task' : function(event, template) {
       console.log('mouseup');

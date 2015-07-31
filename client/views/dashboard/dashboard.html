@@ -1,34 +1,34 @@
-<template name='dashboard'>
-  <div class='wrapper'>
-    <div class='row nav_bar_wrapper'>
+<template name="dashboard">
+  <div class="wrapper">
+    <div class="row nav_bar_wrapper">
       {{> navigation}}
     </div>
       <div class="row">
-  	  <div class='dashboardWrapper large-12 columns'>
-  	  	<div class='todoWrapper large-4 columns'>
-  		  	<div class='todoHeader'>To Do</div>
-          <div class='taskContainer'>
-  		  		<div class='todoBody taskBody'>
+  	  <div class="dashboardWrapper large-12 columns">
+  	  	<div class="todoWrapper large-4 columns">
+  		  	<div class="todoHeader">To Do</div>
+          <div class="taskContainer">
+  		  		<div class="todoBody taskBody">
   		  			{{#each tasks_to_do}}
   		  				{{> task}}
   		  			{{/each}}
   		  		</div>
   	  		</div>
   	  	</div>
-  	  	<div class='inProgressWrapper large-4 columns'>
-  	 			<div class='taskContainer '>
-  		  		<div class='inProgressHeader'>In Progress</div>
-  		  		<div class='inProgressBody taskBody'>
+  	  	<div class="inProgressWrapper large-4 columns">
+  	 			<div class="taskContainer ">
+  		  		<div class="inProgressHeader">In Progress</div>
+  		  		<div class="inProgressBody taskBody">
               {{#each tasks_in_progress}}
                 {{> task}}
               {{/each}}
   		  		</div>
   	  		</div>
   	  	</div>
-  	  	<div class='completeWrapper large-4 columns'>
-  		  	<div class='completeHeader'>Complete</div>
-          <div class='taskContainer'>
-  		  		<div class='completeBody taskBody'>
+  	  	<div class="completeWrapper large-4 columns">
+  		  	<div class="completeHeader">Complete</div>
+          <div class="taskContainer">
+  		  		<div class="completeBody taskBody">
   		  			{{#each tasks_done}}
   		  				{{> task}}
   		  			{{/each}}

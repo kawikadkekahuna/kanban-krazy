@@ -1,7 +1,5 @@
 'use strict';
 
-var IS_DRAGGING = false;
-
 Template.task.created = function() {
 
 };
@@ -101,7 +99,9 @@ Template.task.events({
             }
           });
         }
-      $('.edit_toggle').click(); $('.close-reveal-modal').click();
+      // $('.edit_toggle').click(); 
+      $('.close-edit-box').click();
+
       });
 
     },

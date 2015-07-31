@@ -8,7 +8,7 @@ Template.navigation.update = function(){
 };
 
 Template.navigation.destroyed = function(){
-	Router.go('/dashboard');
+	console.log('destroyed');
 };
 
 

@@ -100,8 +100,8 @@ Template.task.events({
       var newDescription = $(event.target).closest('div').find('.task_description').val();
       var task_id = $(event.target).closest('div').find('.task_id').attr('value');
 
-      console.log(task_id);
-      console.log(newTitle);
+      console.log("id",typeof task_id);
+      console.log("title",typeof newTitle);
       console.log(newDescription);
 
       if (newTitle === "" && newDescription === "") {
@@ -133,14 +133,17 @@ Template.task.events({
 
       } else {
 
-        console.log("3");
+        console.log("3", task_id);
 
         TasksCollection.update(task_id, {
 
           $set: {
-            title: newTitle,
-            description: newDescription
+            title: "" + newTitle + "",
+            description: "" + newDescription + ""
           }
+        }, function() {
+
+          console.log(TasksCollection.find(task_id).fetch());
         });
       }
 

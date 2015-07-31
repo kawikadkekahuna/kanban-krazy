@@ -60,6 +60,7 @@ Template.task.events({
     // $(document).foundation('dropdown', 'reflow');
     $(document).foundation('reveal', 'reflow');
 
+    //edit button
     $('.display_toggle').click(function(event) {
 
       event.preventDefault();

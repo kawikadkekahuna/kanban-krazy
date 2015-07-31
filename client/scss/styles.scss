@@ -489,12 +489,13 @@ height: 100%;
       border-radius: 10px; /* future proofing */
       -khtml-border-radius: 10px; /* for old Konqueror browsers */      
       background-color: rgba(28,92,3,0.8) !important;
-      color:rgba(0,0,0,1);
+      color:rgba(255,255,255,0.7);
       font-weight:800;
     }
 
     .landing-button:hover{
       background-color:rgba(86,186,47,1) !important;
+      color:rgba(255,255,255,1);
     }
   }   
 }

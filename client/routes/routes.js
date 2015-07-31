@@ -1,6 +1,6 @@
 Router.onBeforeAction(function() {
   if (! Meteor.userId()) {
-    this.render('register');
+    this.render('landing');
   } else {
     this.next();
   }
@@ -8,7 +8,7 @@ Router.onBeforeAction(function() {
 
 Router.route('/')
 	.get(function() {
-		this.render('layout')
+		this.render('landing')
 	});
 
 Router.route('/dashboard')

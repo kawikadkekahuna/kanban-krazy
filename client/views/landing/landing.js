@@ -24,9 +24,6 @@ Template.landing.events({
 		var email = $('.landing-email').val();
 		var username = $('.landing-username').val();
 		var password = $('.landing-password').val();
-		console.log('email',email);
-		console.log('username',username);
-		console.log('password',password);
 		Accounts.createUser({
 			username: username,
 			password: password,

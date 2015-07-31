@@ -94,26 +94,6 @@ body{
   float: right;
 }
 
-.editTaskControls{
-  display:flex;
-  align-items:center;
-}
-
-.task{
-  background-color:orange;
-  border:1px solid black;
-  cursor:pointer;
-}
-
-.taskContainer{
-  overflow:auto;
-  overflow-x:hidden;
-}
-
-.taskBody{
-  height:500px;
-}
-
 .todoBody {
 
   font-size:12px;
@@ -259,7 +239,7 @@ body{
       }
 
     .nav-menu-dropdown{
-      display: block; 
+      display: block;
       background-color: rgba(255,255,255,0.5);
       /*text-shadow: 0 -1px 0 #000;*/
 
@@ -277,13 +257,55 @@ body{
     .nav-bar-item:hover{
       background-color: rgba(255,255,255,0.5);
     }
-
-
    }
-
 }
 
+.taskContainer{
+  // overflow:auto;
+  // overflow-x:hidden;
+  // margin-left: auto;
+  // margin-right: auto;
 
+  .taskBody{
+    height:500px;
+    // margin-left: auto;
+    // margin-right: auto;
+
+    .task{
+      background-color:orange;
+      border:1px solid black;
+      cursor:pointer;
+      height: 50px;
+
+      .editTaskControls{
+        // display:flex;
+        // align-items:center;
+        // text-align: center;
+        width: 100%;
+        // overflow: hidden;
+
+        .task_buttons {
+
+          // list-style: none;
+          // list-style: none;
+          // position: relative;
+          // float: left;
+          // display: block;
+          // left: 50%;
+
+          .task_li {
+
+            // display: inline;
+            // position: relative;
+            // float: left;
+            // display: block;
+            // right: 50%;
+          }
+        }
+      }
+    }
+  }
+}
 
 /*ul li:hover ul {
   display: block;

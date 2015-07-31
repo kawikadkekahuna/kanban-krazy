@@ -1,7 +1,11 @@
 <template name='task'>
-  <div class='task ui-draggable'>
-    <div class='editTaskControls row'>
-      <div class="large-1 columns">
+  <div class='task ui-draggable row'>
+    <div class='editTaskControls large-4 columns'>
+      <ul class="button-group round task_button even-3">
+        <li><a href="#" class="small button secondary task_li">left</a></li>
+        <li><a href="#" class="small button secondary task_li">task</a></li>
+        <li><a href="#" class="small button secondary task_li">right</a></li>
+      <!-- <div class="large-1 columns">
         <div class='left_button'></div>
       </div>
       <a class='taskTitle large-10 columns' data-reveal-id="modal{{_id}}"> {{title}}</a>
@@ -51,11 +55,12 @@
       </div>
       <div class='large-1 columns'>
         <div class='right_button'></div>
-      </div>
+      </div> -->
+      </ul>
     </div>
-    <div class='taskInformation'>
+    <!-- <div class='taskInformation'>
       <div class='taskDescription'> Description </div>
       <div class='taskComments'> Comments </div>
-    </div>
+    </div> -->
   </div>
 </template>

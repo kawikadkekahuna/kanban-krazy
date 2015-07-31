@@ -64,6 +64,7 @@ Template.task.events({
       event.preventDefault();
 
       TasksCollection.remove($(event.target).closest('div').find('.task_id').attr('value'));
+      $('.task_title').unbind('click');
       $('.close-reveal-modal').click();
     });
 
@@ -101,6 +102,7 @@ Template.task.events({
             }
           });
         }
+      $('.task_title').unbind('click');
       $('.edit_toggle').click(); $('.close-reveal-modal').click();
       });
 

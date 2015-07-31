@@ -4,7 +4,7 @@
 }
 
 .header{
-	background-color:red;
+	background-color:transparent;
 }
 
 body{
@@ -192,3 +192,19 @@ body{
   filter: alpha(opacity=80);
 }
 
+.curved{
+	border-radius:25px !important;
+}
+
+.top-bar{
+	background-image: url('http://subtlepatterns.com/patterns/symphony.png');
+}
+
+.top-bar-section .ul{
+	background-image: url('http://subtlepatterns.com/patterns/symphony.png') !important;
+}
+
+.dashboardLogin{
+	border:1px solid black;
+	height:68px;
+}

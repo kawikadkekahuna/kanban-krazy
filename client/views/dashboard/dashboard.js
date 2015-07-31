@@ -14,18 +14,18 @@ Template.dashboard.created = function() {
   $(".details_div").hide();
 };
 
-Template.dashboard.update = function(){
+Template.dashboard.update = function() {
 
 };
 
-Template.dashboard.destroyed = function(){
+Template.dashboard.destroyed = function() {
 
 };
 
-Template.dashboard.rendered = function(){
+Template.dashboard.rendered = function() {
 
-    $(document).foundation('accordion', 'reflow');
-    $(document).foundation('reveal', 'reflow');
+  $(document).foundation('accordion', 'reflow');
+  $(document).foundation('reveal', 'reflow');
 }
 
 Template.dashboard.onRendered(function() {
@@ -33,19 +33,19 @@ Template.dashboard.onRendered(function() {
   dragula([document.querySelector('.todoBody'), document.querySelector('.inProgressBody'), document.querySelector('.completeBody')], {
       direction: 'vertical',
       revertOnSpill: true,
-      delay:100
+      delay: 100
     })
-    .on('drop', function(el,container,source) {
+    .on('drop', function(el, container, source) {
       console.log('drop');
       container = container.className.split(' ')[0];
       source = source.className.split(' ')[0];
 
-      console.log('container',container);
-      console.log('source',source);
+      console.log('container', container);
+      console.log('source', source);
 
-      $('.'+container).fadeTo(OPACITY_SPEED,OPACITY_BRIGHTEN);
+      $('.' + container).fadeTo(OPACITY_SPEED, OPACITY_BRIGHTEN);
 
-      $('.'+source).fadeTo(OPACITY_SPEED,OPACITY_BRIGHTEN);
+      $('.' + source).fadeTo(OPACITY_SPEED, OPACITY_BRIGHTEN);
 
       var id = Blaze.getData(el)._id;
 
@@ -73,12 +73,12 @@ Template.dashboard.onRendered(function() {
           break;
       }
     })
-    .on('drag',function(el,container,source){
+    .on('drag', function(el, container, source) {
       console.log('drag');
       container = container.className.split(' ')[0];
-      console.log('container',container);
+      console.log('container', container);
 
-      $('.'+container).fadeTo(OPACITY_SPEED,OPACITY_FADE);
+      $('.' + container).fadeTo(OPACITY_SPEED, OPACITY_FADE);
     });
 
 
@@ -243,28 +243,13 @@ Template.dashboard.events({
 
     template.find('.title_input').value = "";
     template.find('.description_input').value = "";
+  },
+  'click .edit_toggle': function(event, template) {
+
+    if ($('.hover_display_container').hasClass('hidden')) {
+
+      $('.hover_display_container').removeClass('hidden').addClass('show');
+      $('.hover_edit_container').removeClass('show').addClass('hidden');
+    }
   }
-  // },
-  // 'click .display_toggle': function(event,template) {
-
-  //   event.preventDefault();
-
-    // if($('.hover_display_container').hasClass('show')) {
-
-    //   $('.hover_display_container').removeClass('show').addClass('hidden');
-    //   $('.hover_edit_container').removeClass('hidden').addClass('show');
-    // }
-  // },
-
-  // 'click .edit_toggle': function(event,template) {
-
-  //   event.preventDefault();
-
-  //   if($('.hover_display_container').hasClass('hidden')) {
-
-  //     $('.hover_display_container').removeClass('hidden').addClass('show');
-  //     $('.hover_edit_container').removeClass('show').addClass('hidden');
-  //   }
-
-  // }
 });

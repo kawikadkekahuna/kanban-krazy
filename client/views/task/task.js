@@ -12,18 +12,18 @@ Template.task.created = function() {
   // $(".details_div").hide();
 };
 
-Template.task.update = function(){
+Template.task.update = function() {
 
 };
 
-Template.task.destroyed = function(){
+Template.task.destroyed = function() {
 
 };
 
-Template.task.rendered = function(){
+Template.task.rendered = function() {
 
-    $(document).foundation('accordion', 'reflow');
-    $(document).foundation('reveal', 'reflow');
+  $(document).foundation('accordion', 'reflow');
+  $(document).foundation('reveal', 'reflow');
 }
 
 Template.task.onRendered(function() {
@@ -61,7 +61,7 @@ Template.task.events({
 
       event.preventDefault();
 
-      if($('.hover_display_container').hasClass('show')) {
+      if ($('.hover_display_container').hasClass('show')) {
 
         $('.hover_display_container').removeClass('show').addClass('hidden');
         $('.hover_edit_container').removeClass('hidden').addClass('show');
@@ -75,7 +75,7 @@ Template.task.events({
 
       event.preventDefault();
 
-      if($('.hover_display_container').hasClass('hidden')) {
+      if ($('.hover_display_container').hasClass('hidden')) {
 
         $('.hover_display_container').removeClass('hidden').addClass('show');
         $('.hover_edit_container').removeClass('show').addClass('hidden');
@@ -91,64 +91,112 @@ Template.task.events({
     });
 
     $('.update_button').click(function(event) {
+        event.preventDefault();
+        console.log($(event.target).closest('div'));
+        var newTitle = $(event.target).closest('div').find('.task_title').val();
+        var newDescription = $(event.target).closest('div').find('.task_description').val();
+        var task_id = $(event.target).closest('div').find('.task_id').attr('value');
+        console.log(task_id);
+        console.log(newTitle);
+        console.log(newDescription);
+        if (newTitle === "" && newDescription === "") {
+          return;
+        }
+        if (newTitle === "") {
+          console.log("1");
+          TasksCollection.update(task_id, {
+            $set: {
+              description: newDescription
+            }
+          });
+        } else if (newDescription === "") {
+          console.log("2");
+          TasksCollection.update(task_id, {
+            $set: {
+              title: newTitle
+            }
+          });
+        } else {
+          console.log("3");
+          TasksCollection.update(task_id, {
+            $set: {
+              title: newTitle,
+              description: newDescription
+            }
+          });
+        }
+      $('.edit_toggle').click(); $('.close-reveal-modal').click();
+      });
 
-      event.preventDefault();
+    },
+    'mouseup .task' : function(event, template) {
+      console.log('mouseup');
+      $('.todoBody').fadeTo(200, 1);
+      $('.inProgressBody').fadeTo(200, 1);
+      $('.completeBody').fadeTo(200, 1);
+    }
 
-      console.log($(event.target).closest('div'));
+//       event.preventDefault();
 
-      var newTitle = $(event.target).closest('div').find('.task_title').val();
-      var newDescription = $(event.target).closest('div').find('.task_description').val();
-      var task_id = $(event.target).closest('div').find('.task_id').attr('value');
+//       console.log($(event.target).closest('div'));
 
-      console.log("id",typeof task_id);
-      console.log("title",typeof newTitle);
-      console.log(newDescription);
+//       var newTitle = $(event.target).closest('div').find('.task_title').val();
+//       var newDescription = $(event.target).closest('div').find('.task_description').val();
+//       var task_id = $(event.target).closest('div').find('.task_id').attr('value');
 
-      if (newTitle === "" && newDescription === "") {
+//       console.log("id",typeof task_id);
+//       console.log("title",typeof newTitle);
+//       console.log(newDescription);
 
-        return;
-      }
+//       if (newTitle === "" && newDescription === "") {
 
-      if (newTitle === "") {
+//         return;
+//       }
 
-        console.log("1");
+//       if (newTitle === "") {
 
-        TasksCollection.update(task_id, {
+//         console.log("1");
 
-          $set: {
-            description: newDescription
-          }
-        });
+//         TasksCollection.update(task_id, {
 
-      } else if (newDescription === "") {
+//           $set: {
+//             description: newDescription
+//           }
+//         });
 
-        console.log("2");
+//       } else if (newDescription === "") {
 
-        TasksCollection.update(task_id, {
+//         console.log("2");
 
-          $set: {
-            title: newTitle
-          }
-        });
+//         TasksCollection.update(task_id, {
 
-      } else {
+//           $set: {
+//             title: newTitle
+//           }
+//         });
 
-        console.log("3", task_id);
+//       } else {
 
-        TasksCollection.update(task_id, {
+//         console.log("3", task_id);
 
-          $set: {
-            title: "" + newTitle + "",
-            description: "" + newDescription + ""
-          }
-        }, function() {
+//         TasksCollection.update(task_id, {
 
-          console.log(TasksCollection.find(task_id).fetch());
-        });
-      }
+//           $set: {
+//             title: "" + newTitle + "",
+//             description: "" + newDescription + ""
+//           }
+//         }, function() {
 
-      $('.edit_toggle').click();
-      $('.close-reveal-modal').click();
-  });
-  }
+//           console.log(TasksCollection.find(task_id).fetch());
+//         });
+//       }
+
+//       $('.edit_toggle').click();
+//       $('.close-reveal-modal').click();
+//   });
+//   }
+// });
+
+
 });
+

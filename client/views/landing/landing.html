@@ -2,9 +2,25 @@
 {{> header}}
 	<div class="landing">
 		<div class="row">
-			<div class="landing-logo large-12 columns">
-			Kanban-Krazy
+			<div class="large-12 columns">
+				<p class="landing-logo">Kanban-Krazy</p>
 			</div>
+		</div>
+		<div class="row">
+			<div class="large-8 columns"></div>
+			<div class="landing-login large-4 columns">
+				<p><a href="#" data-reveal-id="loginModal" class="landing-existing-user">Already have an account? Click here to sign in!</a>
+				<div id="loginModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+				  <form>
+					<p class="landing-login-text">Email</p>
+				  	<input class="landing-login-email" type="text" value="Email">
+				  	<p class="landing-login-text">Password</p>
+				  	<input class="landing-login-password" type="password" value="Password">
+				  	<div class="large-2 columns large-centered landing-login-submit">Login!</div>
+				  </form>
+				  <a class="close-reveal-modal close-landing-login" aria-label="Close">&#215;</a>
+				</div></p>
+			</div>		
 		</div>
 		<div class="row landing-row">
 			<div class="large-8 columns landing-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure quas asperiores non quisquam alias tempore dolorum commodi nihil fuga veniam harum, sunt, debitis, ipsa architecto beatae molestias. Magnam nisi, qui. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum praesentium quidem doloribus hic consectetur debitis harum repellendus optio, quae tempore. Perspiciatis dolore vero praesentium odio asperiores numquam, officia dolor. Quis!
@@ -17,19 +33,6 @@
 						<input class="landing-password" type="password" value="password">
 						<Button class="landing-button">Sign up now!</Button>
 					</form>
-				</div>
-				<div class="landing-login">
-					<p><a href="#" data-reveal-id="loginModal" class="landing-existing-user">Already have an account? Click here to sign in!</a>
-					<div id="loginModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-					  <form>
-							<p class="landing-login-text">Email</p>
-					  	<input class="landing-login-email" type="text" value="Email">
-					  	<p class="landing-login-text">Password</p>
-					  	<input class="landing-login-password" type="password" value="Password">
-					  	<div class="large-2 columns large-centered landing-login-submit">Login!</div>
-					  </form>
-					  <a class="close-reveal-modal close-landing-login" aria-label="Close">&#215;</a>
-					</div></p>
 				</div>
 			</div>
 		</div>

@@ -24,12 +24,11 @@ Template.landing.events({
 			username: username,
 			password: password,
 			email: email,
-		},function(){
 		});
+		Router.go('/dashboard');
 	},
 
 	'click .landing-login':function(event,template){
-		console.log('clicked');
 		$('.landing-login-submit').click(function(event){
 			event.preventDefault();
 			var email = $('.landing-login-email').val();

@@ -195,7 +195,6 @@ body{
   -o-transition: all 0.2s;
   transition: all 0.2s;
 
-<<<<<<< HEAD
   .nav-bar-list{
     text-align: left;
     display: inline;
@@ -276,7 +275,7 @@ body{
       background-color:orange;
       border:1px solid black;
       cursor:pointer;
-      height: 50px;
+      // height: 50px;
 
       .editTaskControls{
         // display:flex;
@@ -284,6 +283,7 @@ body{
         // text-align: center;
         width: 100%;
         // overflow: hidden;
+        margin-top: 14px;
 
         .task_buttons {
 
@@ -294,6 +294,7 @@ body{
           // display: block;
           // left: 50%;
 
+
           .task_li {
 
             // display: inline;
@@ -301,6 +302,7 @@ body{
             // float: left;
             // display: block;
             // right: 50%;
+            max-height: 64px;
           }
         }
       }

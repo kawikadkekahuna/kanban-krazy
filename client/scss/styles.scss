@@ -1,15 +1,28 @@
 
+@import url(http://fonts.googleapis.com/css?family=Titillium+Web:300);
+.fa-2x {
+font-size: 2em;
+}
+
+@import url(http://fonts.googleapis.com/css?family=Questrial);
+.fa-2x {
+font-size: 2em;
+}
+
+@import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+
+
 .wrapper{
   text-align: center;
   font-family: 'Questrial', sans-serif;
 }
 
 .header{
-  background-color:transparent;
+  background-color:white;
 }
 
 body{
-  background-image:url('http://subtlepatterns.com/patterns/wood_pattern.png');
+  background-image:url('http://subtlepatterns.com/patterns/old_map.png');
 }
 
 .title{
@@ -24,9 +37,9 @@ body{
 .dashboardWrapper{
   /*max-height: 400px;*/
   -moz-border-radius: 10px;
--webkit-border-radius: 10px;
-border-radius: 10px; /* future proofing */
--khtml-border-radius: 10px; /* for old Konqueror browsers */
+  -webkit-border-radius: 10px;
+  border-radius: 10px; /* future proofing */
+  -khtml-border-radius: 10px; /* for old Konqueror browsers */
   display:inline-flex;
   /*overflow-y: scroll;*/
   background-image: url('http://subtlepatterns.com/patterns/lined_paper.png');
@@ -196,7 +209,6 @@ border-radius: 10px; /* future proofing */
 .nav_bar_wrapper{
   border:1px solid black;
   height:50px;
-  margin-bottom:20px;
   cursor: pointer;
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
@@ -286,26 +298,22 @@ ul li:hover ul {
 
 
 .header-container{
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  border-radius: 10px; /* future proofing */
-  -khtml-border-radius: 10px; /* for old Konqueror browsers */
-  border:1px solid black;
   font-size:50px;
-  margin-bottom:10px;
 
   .header-text{
     text-align:left;
-    text-shadow: 2px 2px 2px #fff;
+    text-shadow: 3px 3px 3px #d3d3d3;
     vertical-align: center;
     font-size:50px;
     font-weight:800;
   }
 
   .header-description{
-    font-size:15px;
+    font-size:13px;
     font-weight:400;
     text-align: left;
+    font-family: 'Questrial', sans-serif;
+  
   }
 
   .header-img{
@@ -335,13 +343,10 @@ overflow:visible;
 }
 
 .main-menu {
-background:#fbfbfb;
+background:#000;
 border-right:1px solid #e5e5e5;
 position:absolute;
-top:0;
-bottom:0;
-height:100%;
-left:0;
+height:375px;
 width:60px;
 overflow:hidden;
 -webkit-transition:width .05s linear;
@@ -430,11 +435,12 @@ color:#fff;
 background-color:#5fa2db;
 }
 .area {
-float: left;
+float: right;
 background: #e2e2e2;
 width: 100%;
 height: 100%;
 }
+
 @font-face {
   font-family: 'Titillium Web';
   font-style: normal;
@@ -442,6 +448,57 @@ height: 100%;
   src: local('Titillium WebLight'), local('TitilliumWeb-Light'), url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v2/anMUvcNT0H1YN4FII8wpr24bNCNEoFTpS2BTjF6FB5E.woff) format('woff');
 }
 
+.header-wrapper{
+  background-color:#fff;
+}
+
+.landing{
+  background-image:url('https://drscdn.500px.org/photo/3013747/m%3D2048/dcf61a4236183167712ed4153c8a2a38');
+  height:500px;
+  color:#fff;
+  background-size:100%;
+  background-attachment: fixed;
+
+  .landing-logo{
+    font-weight:700;
+    font-size:50px;
+  }
+
+  .landing-row{
+    padding-top:50px;
+
+    .landing-signup-info{
+    }
+
+    .landing-description{
+      -moz-border-radius: 10px;
+      -webkit-border-radius: 10px;
+      border-radius: 10px; /* future proofing */
+      -khtml-border-radius: 10px; /* for old Konqueror browsers */
+      background-color:rgba(0,0,0,0.4);
+      font-weight:600;
+    }
+    
+    .landing-signup-info{
+      padding-left:20px;
+    }
+
+    .landing-button{
+      -moz-border-radius: 10px;
+      -webkit-border-radius: 10px;
+      border-radius: 10px; /* future proofing */
+      -khtml-border-radius: 10px; /* for old Konqueror browsers */      
+      background-color: rgba(28,92,3,0.8) !important;
+      color:rgba(255,255,255,0.7);
+      font-weight:800;
+    }
+
+    .landing-button:hover{
+      background-color:rgba(86,186,47,1) !important;
+      color:rgba(255,255,255,1);
+    }
+  }   
+}
 .taskContainer{
   overflow:auto;
   overflow-x:hidden;

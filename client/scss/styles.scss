@@ -284,7 +284,6 @@ ul li:hover ul {
   visibility: visible;
 }
 
-
 .header-container{
   font-size:50px;
 
@@ -486,6 +485,31 @@ height: 100%;
       color:rgba(255,255,255,1);
     }
   }
+
+  .landing-login{
+    p{
+      -moz-border-radius: 10px;
+      -webkit-border-radius: 10px;
+      border-radius: 10px; /* future proofing */
+      -khtml-border-radius: 10px; /* for old Konqueror browsers */
+      font-weight:800;
+      color:rgba(255,255,255,1);
+      text-decoration: none;
+    }
+
+    a{
+      color:#000;
+      font-weight:bold;
+    }
+    a:hover{
+      color:blue;
+    }
+  }
+
+  .landing-login:hover{
+      text-decoration: underline;
+      color:blue;
+  }
 }
 .taskContainer{
   overflow:auto;
@@ -524,15 +548,15 @@ height: 100%;
   color: black;
 }
 
-// .task_button {
+ .task_button {
 
-//   margin: 2px;
-//   width: 50px;
-//   font-family: arial;
-//   font-size: 10px;
-//   color: white;
-//   background-color: black;
-// }
+   margin: 2px;
+   width: 50px;
+   font-family: arial;
+   font-size: 10px;
+   color: white;
+   background-color: black;
+ }
 
 .edit_button {
 
@@ -627,3 +651,21 @@ height: 100%;
   background-size: cover;
   background-repeat: no-repeat;
 }
+#loginModal{
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px; /* future proofing */
+  -khtml-border-radius: 15px; /* for old Konqueror browsers */
+  background-color:rgba(0,0,0,0.5);
+  width:600px;
+
+  .landing-login-text{
+    font-weight: 800;
+    color:rgba(255,255,255,1);
+  }
+  .landing-login-submit{
+    border:1px solid black;
+    color:rgba(255,255,255,1);
+  }
+}
+

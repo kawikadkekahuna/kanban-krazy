@@ -24,9 +24,6 @@ Template.landing.events({
 		var email = $('.landing-email').val();
 		var username = $('.landing-username').val();
 		var password = $('.landing-password').val();
-		console.log('email',email);
-		console.log('username',username);
-		console.log('password',password);
 		Accounts.createUser({
 			username: username,
 			password: password,
@@ -34,7 +31,22 @@ Template.landing.events({
 		},function(){
 			console.log('user added');
 		});
+	},
+
+	'click .landing-login':function(event,template){
+		console.log('clicked');
+		$('.landing-login-submit').click(function(event){
+			event.preventDefault();
+			var email = $('.landing-login-email').val();
+			var password = $('.landing-login-password').val();
+			Meteor.loginWithPassword(email,password,function(){
+				console.log('logged in');
+				Router.redirect('/dashboard');
+			});
+
+		});	
 	}
+
 
 });
 

@@ -454,10 +454,13 @@ height: 100%;
       -webkit-border-radius: 15px;
       border-radius: 15px; /* future proofing */
       -khtml-border-radius: 15px; /* for old Konqueror browsers */
-      background-color:orange;
+      // background-color:orange;
       border:1px solid black;
       cursor:pointer;
       margin: 1px;
+      background-image: url('images/1413878264342.png');
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
 
       .editTaskControls{
         display:flex;
@@ -472,15 +475,81 @@ height: 100%;
 
   font-size: 12px;
   font-weight: 300;
+  color: white;
+}
+
+// .task_button {
+
+//   margin: 2px;
+//   width: 50px;
+//   font-family: arial;
+//   font-size: 10px;
+//   color: white;
+//   background-color: black;
+// }
+
+.edit_button {
+
+  background-image: url('images/pencil43.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+
+.delete_button {
+
+  background-image: url('images/delete96.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
 }
 
 .task_button {
-
-  margin: 2px;
-  width: 50px;
-  font-family: arial;
-  font-size: 10px;
+  -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+  -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+  box-shadow:inset 0px 1px 0px 0px #ffffff;
+  // background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #f6f6f6));
+  // background:-moz-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+  // background:-webkit-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+  // background:-o-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+  // background:-ms-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+  // background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0);
+  // background-color:#ffffff;
+  -moz-border-radius:6px;
+  -webkit-border-radius:6px;
+  border-radius:6px;
+  border:1px solid #dcdcdc;
+  display:inline-block;
+  cursor:pointer;
+  color:#666666;
+  font-family:Arial;
+  font-size:10px;
+  font-weight:bold;
+  padding:3px 12px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #ffffff;
+  margin: 1px;
+  background-color:white;
 }
+.task_button:hover {
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f6f6f6), color-stop(1, #ffffff));
+  background:-moz-linear-gradient(top, #f6f6f6 25%, #ffffff 100%);
+  background:-webkit-linear-gradient(top, #f6f6f6 25%, #ffffff 100%);
+  background:-o-linear-gradient(top, #f6f6f6 25%, #ffffff 100%);
+  background:-ms-linear-gradient(top, #f6f6f6 25%, #ffffff 100%);
+  background:linear-gradient(to bottom, #f6f6f6 25%, #ffffff 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f6f6f6', endColorstr='#ffffff',GradientType=0);
+  // background-color:#f6f6f6;
+}
+.task_button:active {
+  position:relative;
+  top:1px;
+}
+
+
 
 .details_div {
 

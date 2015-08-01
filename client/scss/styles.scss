@@ -34,18 +34,6 @@ body{
   text-align:right;
 }
 
-.dashboardWrapper{
-  /*max-height: 400px;*/
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  border-radius: 10px; /* future proofing */
-  -khtml-border-radius: 10px; /* for old Konqueror browsers */
-  display:inline-flex;
-  /*overflow-y: scroll;*/
-  background-image: url('http://subtlepatterns.com/patterns/lined_paper.png');
-}
-
-
 .dashboardLogin {
 
   margin: 5px auto;
@@ -313,7 +301,7 @@ ul li:hover ul {
     font-weight:400;
     text-align: left;
     font-family: 'Questrial', sans-serif;
-  
+
   }
 
   .header-img{
@@ -478,7 +466,7 @@ height: 100%;
       background-color:rgba(0,0,0,0.4);
       font-weight:600;
     }
-    
+
     .landing-signup-info{
       padding-left:20px;
     }
@@ -487,7 +475,7 @@ height: 100%;
       -moz-border-radius: 10px;
       -webkit-border-radius: 10px;
       border-radius: 10px; /* future proofing */
-      -khtml-border-radius: 10px; /* for old Konqueror browsers */      
+      -khtml-border-radius: 10px; /* for old Konqueror browsers */
       background-color: rgba(28,92,3,0.8) !important;
       color:rgba(255,255,255,0.7);
       font-weight:800;
@@ -497,7 +485,7 @@ height: 100%;
       background-color:rgba(86,186,47,1) !important;
       color:rgba(255,255,255,1);
     }
-  }   
+  }
 }
 .taskContainer{
   overflow:auto;
@@ -515,9 +503,10 @@ height: 100%;
       border:1px solid black;
       cursor:pointer;
       margin: 1px;
-      background-image: url('images/1413878264342.png');
+      background-image: url('images/blue-flat_lighter1.JPG');
       background-size: 100% 100%;
       background-repeat: no-repeat;
+      font-family: 'Questrial', sans-serif;
 
       .editTaskControls{
         display:flex;
@@ -532,7 +521,7 @@ height: 100%;
 
   font-size: 12px;
   font-weight: 300;
-  color: white;
+  color: black;
 }
 
 // .task_button {
@@ -606,11 +595,17 @@ height: 100%;
   top:1px;
 }
 
+.edit_modal {
 
+  font-family: 'Questrial', sans-serif;
+  font-size: 12px;
+}
 
 .details_div {
 
   text-align: center;
+  font-family: 'Questrial', sans-serif;
+  font-size: 12px;
 }
 
 .description_container {
@@ -618,4 +613,17 @@ height: 100%;
   width: 90%;
   font-size: 12px;
   text-align: left;
+}
+
+.dashboardWrapper{
+  /*max-height: 400px;*/
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px; /* future proofing */
+  -khtml-border-radius: 10px; /* for old Konqueror browsers */
+  display:inline-flex;
+  /*overflow-y: scroll;*/
+  background-image: url('images/sun-day-1.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
